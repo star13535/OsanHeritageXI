@@ -9,7 +9,7 @@
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="오산헤리티지자이 - 장영희 팀장">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="오산,동탄,수원 생활권을 연결하는 병점역의 신거주타운!">
     <meta property="og:image" content="https://star13535.github.io/OsanHeritageXI/img/JYH.JPG">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -364,7 +364,7 @@
             box-shadow: 0 4px 10px rgba(21, 47, 71, 0.2);
         }
         .type-group { display: none; padding: 18px 10px; text-align: center; }
-        #photo-view .type-group.active { display: block !important; }
+        #num-view .type-group.active { display: block !important; }
         .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 
         /* [6. PC 레이아웃 고정] */
@@ -450,8 +450,8 @@
     <div class="main-title">
         <div class="inner-logo"><img src="img/logo.jpg" alt="더리브 로고"></div>
         <div class="title-text">
-            <h2>수원 오목천역 더리브</h2>
-            <p>SGC E&C가 오목천역에 선보이는 초역세권 프리미엄 명품 브랜드 단지!</p>
+            <h2>오산헤리티지자</h2>
+            <p>오산,동탄,수원 생활권을 연결하는 병점역의 신거주타운!</p>
         </div>
     </div>
     
@@ -465,9 +465,8 @@
     <div class="tab-menu">
         <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업개요</button>
         <button class="tab-btn" onclick="openTab(event, 'tab2')">단지&세대안내</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab3')">개발계획</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab4')">관내분석</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab5')">주목할점</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">시장환경</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">프리미엄</button>
     </div>
 
     <div id="tab1" class="tab-content active">
@@ -484,29 +483,58 @@
 
     <div id="tab2" class="tab-content">
         <div class="view-mode-selector">
-            <button class="mode-btn active" onclick="changeViewMode(event, 'photo-view')">🏢 단지 안내</button>
-            <button class="mode-btn" onclick="changeViewMode(event, 'plan-view')">🏠 평면도 안내</button>
+            <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
+            <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
+            <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
         </div>
-        <div id="photo-view" class="mode-content active">
+        
+        <div id="num-view" class="mode-content active">
             <div class="type-group active"><div class="sub-tab-menu">
-                <button class="sub-tab-btn active" onclick="openSubTab(event, 'danji1', 'photo-view')">단지 배치도</button>
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji2', 'photo-view')">동호 배치도</button>
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji3', 'photo-view')">특화 시스템</button>
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'num1', 'num-view')">1BL</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'num2', 'num-view')">2BL</button>
             </div></div>
-            <div id="danji1" class="sub-tab-content active"><img src="img/7.jpg"></div>
-            <div id="danji2" class="sub-tab-content"><img src="img/8.jpg"></div>
-            <div id="danji3" class="sub-tab-content"><img src="img/12.jpg"></div>
+            <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
+            <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
         </div>
-        <div id="plan-view" class="mode-content">
+        
+        <div id="1BL-view" class="mode-content">
+            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
+                <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
+
+
+            </div>
+            <div id="size75" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">84㎡A,B 보기</button></div></div>
+            <div id="size84ABCD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡C,D 보기</button></div></div>
+            <div id="size102" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">84㎡E,F 보기</button></div></div>
+            <div id="size104" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">84㎡C,D 보기</button></div></div>
+            <div id="size166" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">84㎡E,F 보기</button></div></div>
+            <div id="clubxian" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">84㎡E,F 보기</button></div></div>
+
+
+            <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
+            <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
+            <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
+            <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
+            <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
+            <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
+        </div>
+        
+        <div id="2BL-view" class="mode-content">
             <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
             <div class="size-filter">
                 <button class="filter-btn active" onclick="filterSize(event, 'size84AB')">84A/84B</button>
                 <button class="filter-btn" onclick="filterSize(event, 'size84CD')">84C/84D</button>
                 <button class="filter-btn" onclick="filterSize(event, 'size84EF')">84E/84F</button>
             </div>
-            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', 'plan-view')">84㎡A,B 보기</button></div></div>
-            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', 'plan-view')">84㎡C,D 보기</button></div></div>
-            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', 'plan-view')">84㎡E,F 보기</button></div></div>
+            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', '1BL-view')">84㎡A,B 보기</button></div></div>
+            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', '1BL-view')">84㎡C,D 보기</button></div></div>
+            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', '1BL-view')">84㎡E,F 보기</button></div></div>
 
             <div id="type84AB" class="sub-tab-content active"><img src="img/9.jpg"></div>
             <div id="type84CD" class="sub-tab-content"><img src="img/10.jpg"></div>
@@ -640,7 +668,7 @@
             document.getElementById(t).classList.add("active");
             e.currentTarget.classList.add("active");
             
-            if(t === 'tab2') changeViewMode(null, 'photo-view');
+            if(t === 'tab2') changeViewMode(null, 'num-view');
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
@@ -655,13 +683,13 @@
                 document.querySelector('.mode-btn').classList.add('active');
             }
             
-            if(m === 'photo-view') document.querySelector('#photo-view .sub-tab-btn').click();
+            if(m === 'num-view') document.querySelector('#num-view .sub-tab-btn').click();
             else document.querySelector('.filter-btn').click();
         }
 
         // 7. 평면도 평형 필터링
         function filterSize(e, s) {
-            document.querySelectorAll('#plan-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
+            document.querySelectorAll('#1BL-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
             document.getElementById(s).classList.add('active');
             e.currentTarget.classList.add('active');
             document.getElementById(s).querySelector('.sub-tab-btn').click();
