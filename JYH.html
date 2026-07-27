@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>
+        // 전역 변수 선언: 관리할 데이터들을 이곳에 모아둡니다.
+        const TEAM_LEADER_NAME = "장영희";
+        const TEAM_LEADER_PHONE = "01033230322";
+    </script>
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="오산헤리티지자이 - 장영희 팀장">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="https://star13535.github.io/OsanHeritageXI/img/JYH.JPG">    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>오산헤리티지자이 - 장영희 팀장</title>
+    
+    <link rel="icon" href="img/logo.jpg" type="image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* [공통 설정 - THE LIV 브랜드 테마 반영: 프리미엄 다크 네이비 & 브라운 골드 톤] */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            background-color: #faf9f6; 
+            color: #152232; 
+            text-align: center; 
+            -webkit-font-smoothing: antialiased;
+        }
+        img { width: 100%; height: auto; display: block; vertical-align: middle; }
+
+        /* [1. 인트로 팝업] */
+        .intro-popup-container { 
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
+            background: rgba(21, 47, 71, 0.7); 
+            backdrop-filter: blur(8px); 
+            z-index: 10000; align-items: center; justify-content: center; padding: 15px;
+        }
+        .intro-popup-content { 
+            position: relative; width: 95%; max-width: 420px; 
+            animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; 
+            transform-origin: center center; opacity: 0;
+        }
+        @keyframes fadeInScale {
+            0% { transform: translateY(-30px) scale(0.92); opacity: 0; }
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+        .intro-popup-content img { 
+            border-radius: 20px; 
+            border: 2px solid #b28970; 
+            box-shadow: 0 25px 50px -12px rgba(21, 47, 71, 0.5); 
+        }
+        .pop-close-x { 
+            position: absolute; top: 15px; right: 15px; width: 34px; height: 34px; 
+            cursor: pointer; z-index: 2; 
+            background: rgba(21, 47, 71, 0.85); 
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%; color: #fff; 
+            line-height: 31px; font-weight: 500; font-style: normal;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+        .pop-close-x:hover {
+            background: #b28970;
+            color: #15212f;
+            border-color: #b28970;
+        }
+
+        /* [2. 명함 & 예약 폼 섹션] */
+        .business-card, .reservation-card { 
+            width: 100%; 
+            background: #fff; 
+            padding: 40px 20px; 
+            border-bottom: 1px solid #eef0f2; 
+        }
+        .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
+        .card-container img { 
+            border-radius: 16px; 
+            border: 1px solid rgba(178, 137, 112, 0.25); 
+            box-shadow: 0 15px 35px -5px rgba(21, 47, 71, 0.08); 
+            transition: transform 0.3s;
+        }
+        .card-container img:hover {
+            transform: translateY(-4px);
+        }
+        .card-btn-call { 
+            display: block; 
+            margin-top: 20px; 
+            padding: 15px 0; 
+            background: linear-gradient(135deg, #152f47, #0f2233); 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+            box-shadow: 0 8px 16px -4px rgba(21, 47, 71, 0.3);
+            border: 1px solid rgba(178, 137, 112, 0.3); 
+            transition: all 0.3s;
+        }
+        .card-btn-call:hover {
+            background: linear-gradient(135deg, #b28970, #96715b); 
+            border-color: #96715b;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -4px rgba(178, 137, 112, 0.4);
+        }
+
+        .res-container { 
+            border: 1px solid #b28970; 
+            border-radius: 24px; 
+            padding: 30px 24px; 
+            background: linear-gradient(135deg, #112538, #1c3d5c); 
+            box-shadow: 0 20px 40px -10px rgba(21, 47, 71, 0.3); 
+            color: #fff; 
+        }
+        .res-container h3 { 
+            font-size: 19px; 
+            color: #b28970; 
+            margin-bottom: 20px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+        }
+        .res-input { 
+            width: 100%; 
+            padding: 14px 16px; 
+            margin-bottom: 12px; 
+            border: 1px solid rgba(178, 137, 112, 0.3); 
+            border-radius: 10px; 
+            font-size: 14px; 
+            background: rgba(255, 255, 255, 0.98); 
+            color: #152f47;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .res-input:focus {
+            outline: none;
+            border-color: #b28970;
+            box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.2);
+        }
+        .res-btn { 
+            width: 100%; 
+            padding: 15px; 
+            background: linear-gradient(135deg, #b28970, #96715b); 
+            color: #ffffff; 
+            border: none; 
+            border-radius: 10px; 
+            font-size: 15px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            box-shadow: 0 6px 20px rgba(178, 137, 112, 0.3);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .res-btn:hover {
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 25px rgba(178, 137, 112, 0.45);
+            filter: brightness(1.05);
+        }
+
+        /* [3. 타이틀 & 배너] */
+        .main-title { 
+            background-color: #fff; 
+            padding: 60px 20px; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 180px; 
+            border-bottom: 1px solid #eef0f2;
+        }
+        .main-title .inner-logo { display: none; }
+        .main-title h2 { 
+            font-size: 32px; 
+            color: #152f47; 
+            font-weight: 700; 
+            letter-spacing: -1.5px; 
+            line-height: 1.25; 
+            word-break: keep-all; 
+        }
+        .main-title p { 
+            font-size: 20px; 
+            color: #5c6b73; 
+            margin-top: 12px; 
+            word-break: keep-all; 
+            font-weight: 400;
+        }
+        
+        .point-banner { 
+            background: linear-gradient(135deg, #112538, #152f47); 
+            color: #fff; 
+            padding: 20px 10px; 
+            font-size: 22px; 
+            font-weight: 700; 
+            letter-spacing: -0.5px;
+            border-top: 1px solid #b28970; 
+            border-bottom: 1px solid #b28970; 
+            box-shadow: inset 0 0 20px rgba(178, 137, 112, 0.15);
+            animation: bannerPulse 3s infinite ease-in-out; 
+        }
+        .point-banner a { 
+            color: #b28970; 
+            text-decoration: none; 
+            border-bottom: 1px solid rgba(178, 137, 112, 0.5);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+        .point-banner a:hover {
+            color: #ffffff;
+            border-color: #ffffff;
+        }
+        @keyframes bannerPulse { 
+            0% { background-color: #112538; } 
+            50% { background-color: #152f47; } 
+            100% { background-color: #112538; } 
+        }
+
+        /* [4. 탭 메뉴] */
+        .tab-menu { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 2000; 
+            border-bottom: 2px solid #152f47; 
+            box-shadow: 0 4px 20px rgba(21, 47, 71, 0.05);
+        }
+        .tab-btn { 
+            flex: 1; 
+            min-width: 20%; 
+            padding: 18px 5px; 
+            border: none; 
+            background: #fff; 
+            font-size: 15px; 
+            font-weight: 500; 
+            color: #5c6b73; 
+            cursor: pointer; 
+            border-right: 1px solid #eef0f2; 
+            transition: all 0.3s;
+        }
+        .tab-btn:hover {
+            color: #152f47;
+            background: #f8fafc;
+        }
+        .tab-btn.active { 
+            background: #152f47; 
+            color: #fff; 
+            font-weight: 700;
+        }
+
+        .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
+        .tab-content.active { display: block !important; }
+
+        /* [5. 탭 콘텐츠 & 복합 필터] */
+        .view-mode-selector { 
+            display: flex; 
+            background: #f1f3f5; 
+            margin: 0; 
+            padding: 12px; 
+            position: sticky; 
+            top: 55px; 
+            z-index: 1500; 
+            border-bottom: 1px solid #e2e6ea; 
+        }
+        .mode-btn { 
+            flex: 1; 
+            padding: 12px; 
+            border: none; 
+            background: #e2e6ea; 
+            font-weight: 700; 
+            color: #5c6b73; 
+            cursor: pointer; 
+            border-radius: 8px; 
+            margin: 0 5px; 
+            transition: all 0.2s;
+        }
+        .mode-btn.active { 
+            background: #152f47; 
+            color: #fff; 
+        }
+        .mode-content, .sub-tab-content { display: none; }
+        .mode-content.active, .sub-tab-content.active { display: block !important; }
+        
+        .size-filter, .type-group.active { 
+            position: sticky; 
+            top: 130px; 
+            z-index: 1000; 
+            background: #fff; 
+            border-bottom: 1px solid #eef0f2; 
+            transition: all 0.3s ease; 
+        }
+        .size-filter.scrolled, .type-group.active.scrolled { 
+            background: transparent !important; 
+            border-bottom: none !important; 
+        }
+        
+        .swipe-hint-text {
+            display: none;
+            font-size: 11px;
+            color: #b28970;
+            margin-top: 15px;
+            margin-bottom: -5px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-align: center;
+        }
+
+        .size-filter { 
+            display: flex; 
+            justify-content: flex-start; 
+            gap: 8px; 
+            padding: 16px 12px 24px 12px; 
+            overflow-x: auto; 
+            scrollbar-width: thin; 
+            scrollbar-color: #b28970 #eef0f2; 
+        }
+
+        @media (max-width: 1023px) {
+            .swipe-hint-text {
+                display: block; 
+                animation: pulseSwipeHint 2s infinite ease-in-out;
+            }
+            .size-filter::-webkit-scrollbar { 
+                display: block !important;
+                height: 3px; 
+            }
+            .size-filter::-webkit-scrollbar-track {
+                background: #eef0f2; 
+                border-radius: 10px;
+            }
+            .size-filter::-webkit-scrollbar-thumb {
+                background: #b28970; 
+                border-radius: 10px;
+            }
+        }
+        
+        @keyframes pulseSwipeHint {
+            0%, 100% { opacity: 0.6; transform: scale(0.98); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+
+        .filter-btn, .sub-tab-btn { 
+            flex: 0 0 auto; 
+            min-width: 95px; 
+            padding: 10px 18px; 
+            border: 1px solid #152f47; 
+            background: #fff; 
+            color: #152f47; 
+            border-radius: 30px; 
+            font-weight: 700; 
+            font-size: 13px;
+            cursor: pointer; 
+            transition: all 0.25s;
+        }
+        .filter-btn:hover, .sub-tab-btn:hover {
+            background: #fafafa;
+        }
+        .filter-btn.active, .sub-tab-btn.active { 
+            background: #152f47 !important; 
+            color: #fff !important; 
+            border-color: #152f47;
+            box-shadow: 0 4px 10px rgba(21, 47, 71, 0.2);
+        }
+        .type-group { display: none; padding: 18px 10px; text-align: center; }
+        #photo-view .type-group.active { display: block !important; }
+        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+
+        /* [6. PC 레이아웃 고정] */
+        @media (min-width: 1024px) {
+            .size-filter {
+                justify-content: center; 
+                padding: 16px 12px;
+            }
+            .size-filter::-webkit-scrollbar {
+                display: none !important; 
+            }
+            .business-card, .reservation-card { 
+                position: fixed; 
+                top: 55%; 
+                width: 320px; 
+                z-index: 1100; 
+                border: 1px solid rgba(178, 137, 112, 0.3); 
+                border-radius: 24px; 
+                background: rgba(255, 255, 255, 0.95); 
+                backdrop-filter: blur(10px); 
+                box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+            }
+            .business-card { left: 40px; transform: translateY(-50%); }
+            .reservation-card { right: 40px; transform: translateY(-50%); }
+            .business-card.scrolled, .reservation-card.scrolled { top: 50% !important; }
+            
+            .main-title .inner-logo { 
+                display: block; 
+                position: absolute; 
+                left: 115px; 
+                top: 50%; 
+                transform: translateY(-50%); 
+                height: 120px; 
+                z-index: 1; 
+            }
+            .main-title .inner-logo img { height: 100%; width: auto; object-fit: contain; }
+            .main-title h2 { font-size: 40px; letter-spacing: -2px; }
+            .main-title p { font-size: 18px; margin-top: 15px; }
+            
+            .mobile-res-only { display: none; } 
+        }
+
+        /* [7. 모바일 레이아웃] */
+        @media (max-width: 1023px) {
+            .reservation-card { 
+                position: static; 
+                border: none; 
+                border-top: 8px solid #eef0f2; 
+                padding: 50px 20px; 
+                background: #fcfdfe; 
+            }
+            #resCard { display: none; } 
+        }
+    </style>
+</head>
+<body>
+    <div class="business-card" id="pcCard">
+        <div class="card-container">
+            <img src="img/JYH.JPG" alt="명함">
+            <a href="#" class="card-btn-call set-phone-link">
+                📞 <span class="set-name"></span> 팀장 상담 바로 연결
+            </a>     
+        </div>
+    </div>
+
+    <div class="reservation-card" id="resCard">
+        <div class="res-container">
+            <h3>📞 전화 상담 예약하기</h3>
+            <input type="text" id="pcName" class="res-input" placeholder="이름">
+            <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만 입력)">
+            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone')">✉️ 상담 예약 신청</button>
+        </div>
+    </div>
+    
+    <div class="intro-popup-container" id="introPopup">
+        <div class="intro-popup-content">
+            <i class="pop-close-x" id="popClose">X</i>
+            <img src="img/JYH.JPG" alt="특별 분양 광고">
+        </div>
+    </div>
+    
+    <div class="main-title">
+        <div class="inner-logo"><img src="img/logo.jpg" alt="더리브 로고"></div>
+        <div class="title-text">
+            <h2>수원 오목천역 더리브</h2>
+            <p>SGC E&C가 오목천역에 선보이는 초역세권 프리미엄 명품 브랜드 단지!</p>
+        </div>
+    </div>
+    
+    <div class="point-banner">
+        ✨ <span class="set-name"></span> 팀장 : 
+        <a href="#" class="set-phone-link">
+            <span class="set-phone-text"></span>
+        </a> ✨
+    </div>
+
+    <div class="tab-menu">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업개요</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">단지&세대안내</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">개발계획</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">관내분석</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab5')">주목할점</button>
+    </div>
+
+    <div id="tab1" class="tab-content active">
+        <img src="img/3.jpg"><img src="img/5.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName1" class="res-input" placeholder="이름">
+                <input type="tel" id="mPhone1" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName1', 'mPhone1')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <div class="view-mode-selector">
+            <button class="mode-btn active" onclick="changeViewMode(event, 'photo-view')">🏢 단지 안내</button>
+            <button class="mode-btn" onclick="changeViewMode(event, 'plan-view')">🏠 평면도 안내</button>
+        </div>
+        <div id="photo-view" class="mode-content active">
+            <div class="type-group active"><div class="sub-tab-menu">
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'danji1', 'photo-view')">단지 배치도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji2', 'photo-view')">동호 배치도</button>
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'danji3', 'photo-view')">특화 시스템</button>
+            </div></div>
+            <div id="danji1" class="sub-tab-content active"><img src="img/7.jpg"></div>
+            <div id="danji2" class="sub-tab-content"><img src="img/8.jpg"></div>
+            <div id="danji3" class="sub-tab-content"><img src="img/12.jpg"></div>
+        </div>
+        <div id="plan-view" class="mode-content">
+            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, 'size84AB')">84A/84B</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84CD')">84C/84D</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84EF')">84E/84F</button>
+            </div>
+            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', 'plan-view')">84㎡A,B 보기</button></div></div>
+            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', 'plan-view')">84㎡C,D 보기</button></div></div>
+            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', 'plan-view')">84㎡E,F 보기</button></div></div>
+
+            <div id="type84AB" class="sub-tab-content active"><img src="img/9.jpg"></div>
+            <div id="type84CD" class="sub-tab-content"><img src="img/10.jpg"></div>
+            <div id="type84EF" class="sub-tab-content"><img src="img/11.jpg"></div>
+        </div>
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg"><img src="img/17.jpg"><img src="img/18.jpg"><img src="img/19.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab4" class="tab-content">
+        <img src="img/27.jpg"><img src="img/30.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName4" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone4" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName4', 'mPhone4')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab5" class="tab-content">
+        <img src="img/32.jpg"><img src="img/36.jpg"><img src="img/37.jpg"><img src="img/38.jpg">
+        <div class="reservation-card mobile-res-only">
+            <div class="res-container">
+                <h3>📞 전화 상담 예약하기</h3>
+                <input type="text" id="mName5" class="res-input" placeholder="고객 성함">
+                <input type="tel" id="mPhone5" class="res-input" placeholder="연락처">
+                <button class="res-btn" onclick="sendReservation('mName5', 'mPhone5')">상담 예약 신청</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            // 1. 초기 데이터 매핑 및 타이틀 세팅
+            const name = TEAM_LEADER_NAME;
+            const phone = TEAM_LEADER_PHONE;
+            const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+        
+            document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
+            document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
+            document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
+            document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
+            document.title = "수원 오목천역 더리브 - " + name + " 팀장";
+
+            // 2. 인드로 팝업 노출 제어
+            const pop = document.getElementById('introPopup');
+            pop.style.display = 'flex';
+            document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
+            pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
+        
+            // 3. 스크롤 및 고정 요소 상태 제어
+            window.addEventListener('scroll', function() {
+                let s = window.pageYOffset || document.documentElement.scrollTop;
+                const pcCard = document.getElementById('pcCard');
+                const resCard = document.getElementById('resCard');
+        
+                if (window.innerWidth >= 1024) {
+                    if (s > 100) {
+                        pcCard?.classList.add('scrolled');
+                        resCard?.classList.add('scrolled');
+                    } else {
+                        pcCard?.classList.remove('scrolled');
+                        resCard?.classList.remove('scrolled');
+                    }
+                }
+        
+                document.querySelectorAll('.size-filter, .type-group.active').forEach(el => {
+                    if (s > 400) el.classList.add('scrolled');
+                    else el.classList.remove('scrolled');
+                });
+            });
+        });
+
+        // 4. 문자 전송 예약 로직
+        function sendReservation(nameId, phoneId) {
+            const name = document.getElementById(nameId).value;
+            let rawPhone = document.getElementById(phoneId).value;
+            let phone = rawPhone.replace(/[^0-9]/g, "");
+        
+            if (!name || !phone) {
+                alert("성함과 연락처를 모두 입력해주세요.");
+                return;
+            }
+        
+            let formattedPhone = "";
+            if (phone.length === 11) {
+                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+            } else if (phone.length === 10) {
+                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3})(\d{4})/, '$1-$2-$3');
+            } else {
+                formattedPhone = phone; 
+            }
+        
+            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 수원 오목천역 더리브 전화 상담 신청합니다.`;
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            
+            const smsLink = `sms:${TEAM_LEADER_PHONE}${isIOS ? '&' : '?'}body=${encodeURIComponent(message)}`;        
+            if (isIOS || isAndroid) {
+                window.location.href = smsLink;
+            } else {
+                const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
+                alert(`PC에서는 문자 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 접수 안내]\n${TEAM_LEADER_NAME} 팀장 번호: ${formatted}\n\n위 번호로 문자를 보내주시면 바로 연락드리겠습니다! ✨`);
+            }
+        }
+
+        // 5. 탭 변경 제어
+        function openTab(e, t) {
+            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
+            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+            document.getElementById(t).classList.add("active");
+            e.currentTarget.classList.add("active");
+            
+            if(t === 'tab2') changeViewMode(null, 'photo-view');
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // 6. 단지 안내 / 평면도 안내 뷰 전환
+        function changeViewMode(e, m) {
+            document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
+            document.getElementById(m).classList.add('active');
+            if(e) {
+                e.currentTarget.classList.add('active');
+                // window.scrollTo({top: 0, behavior: 'smooth'});
+            } else {
+                document.querySelector('.mode-btn').classList.add('active');
+            }
+            
+            if(m === 'photo-view') document.querySelector('#photo-view .sub-tab-btn').click();
+            else document.querySelector('.filter-btn').click();
+        }
+
+        // 7. 평면도 평형 필터링
+        function filterSize(e, s) {
+            document.querySelectorAll('#plan-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
+            document.getElementById(s).classList.add('active');
+            e.currentTarget.classList.add('active');
+            document.getElementById(s).querySelector('.sub-tab-btn').click();
+            // window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        // 8. 서브 탭 제어
+        function openSubTab(e, s, p) {
+            const parent = document.getElementById(p);
+            parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
+            document.getElementById(s).classList.add("active");
+            e.currentTarget.classList.add("active");
+            // window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+    </script>
+</body>
+</html>
