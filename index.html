@@ -482,74 +482,123 @@
     </div>
 
     <div id="tab2" class="tab-content">
-        <div class="view-mode-selector">
-            <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
-            <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
-            <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
-        </div>
-        
-        <div id="num-view" class="mode-content active">
-            <div class="type-group active"><div class="sub-tab-menu">
+    <div class="view-mode-selector">
+        <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
+        <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
+        <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
+    </div>
+    
+    <!-- 동호수표 -->
+    <div id="num-view" class="mode-content active">
+        <div class="type-group active">
+            <div class="sub-tab-menu">
                 <button class="sub-tab-btn active" onclick="openSubTab(event, 'num1', 'num-view')">1BL</button>
                 <button class="sub-tab-btn" onclick="openSubTab(event, 'num2', 'num-view')">2BL</button>
-            </div></div>
-            <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
-            <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
-        </div>
-        
-        <div id="1BL-view" class="mode-content">
-            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-            <div class="size-filter">
-                <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
-                <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
-
-
-            </div>
-            <div id="size75" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">84㎡A,B 보기</button></div></div>
-            <div id="size84ABCD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡C,D 보기</button></div></div>
-            <div id="size102" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">84㎡E,F 보기</button></div></div>
-            <div id="size104" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">84㎡C,D 보기</button></div></div>
-            <div id="size166" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">84㎡E,F 보기</button></div></div>
-            <div id="clubxian" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">84㎡E,F 보기</button></div></div>
-
-
-            <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
-            <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
-            <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
-            <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
-            <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
-            <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
-        </div>
-        
-        <div id="2BL-view" class="mode-content">
-            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-            <div class="size-filter">
-                <button class="filter-btn active" onclick="filterSize(event, 'size84AB')">84A/84B</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size84CD')">84C/84D</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size84EF')">84E/84F</button>
-            </div>
-            <div id="size84AB" class="type-group active"><div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', '2BL-view')">84㎡A,B 보기</button></div></div>
-            <div id="size84CD" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', '2BL-view')">84㎡C,D 보기</button></div></div>
-            <div id="size84EF" class="type-group"><div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', '2BL-view')">84㎡E,F 보기</button></div></div>
-
-            <div id="type84AB" class="sub-tab-content active"><img src="img/9.jpg"></div>
-            <div id="type84CD" class="sub-tab-content"><img src="img/10.jpg"></div>
-            <div id="type84EF" class="sub-tab-content"><img src="img/11.jpg"></div>
-        </div>
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
             </div>
         </div>
+        <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
+        <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
+    </div>
+    
+    <!-- 1BL 뷰 -->
+    <div id="1BL-view" class="mode-content">
+        <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+        <div class="size-filter">
+            <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
+            <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
+        </div>
+
+        <!-- 1BL - 75 -->
+        <div id="size75" class="type-group active">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">75㎡ 보기</button>
+            </div>
+        </div>
+        <!-- 1BL - 84A~D -->
+        <div id="size84ABCD" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡A~D 보기</button>
+            </div>
+        </div>
+        <!-- 1BL - 102 -->
+        <div id="size102" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">102㎡ 보기</button>
+            </div>
+        </div>
+        <!-- 1BL - 104 -->
+        <div id="size104" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">104㎡ 보기</button>
+            </div>
+        </div>
+        <!-- 1BL - 166PH -->
+        <div id="size166" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">166㎡ PH 보기</button>
+            </div>
+        </div>
+        <!-- 1BL - CLUB XIAN -->
+        <div id="clubxian" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">CLUB XIAN 보기</button>
+            </div>
+        </div>
+
+        <!-- 1BL 컨텐츠 이미지들 -->
+        <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
+        <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
+        <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
+        <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
+        <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
+        <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
+    </div>
+    
+    <!-- 2BL 뷰 -->
+    <div id="2BL-view" class="mode-content">
+        <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+        <div class="size-filter">
+            <button class="filter-btn active" onclick="filterSize(event, 'size84AB')">84A/84B</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size84CD')">84C/84D</button>
+            <button class="filter-btn" onclick="filterSize(event, 'size84EF')">84E/84F</button>
+        </div>
+
+        <div id="size84AB" class="type-group active">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn active" onclick="openSubTab(event, 'type84AB', '2BL-view')">84㎡A,B 보기</button>
+            </div>
+        </div>
+        <div id="size84CD" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type84CD', '2BL-view')">84㎡C,D 보기</button>
+            </div>
+        </div>
+        <div id="size84EF" class="type-group">
+            <div class="sub-tab-menu">
+                <button class="sub-tab-btn" onclick="openSubTab(event, 'type84EF', '2BL-view')">84㎡E,F 보기</button>
+            </div>
+        </div>
+
+        <!-- 2BL 컨텐츠 이미지들 -->
+        <div id="type84AB" class="sub-tab-content active"><img src="img/9.jpg"></div>
+        <div id="type84CD" class="sub-tab-content"><img src="img/10.jpg"></div>
+        <div id="type84EF" class="sub-tab-content"><img src="img/11.jpg"></div>
     </div>
 
+    <!-- 모바일 예약 카드 -->
+    <div class="reservation-card mobile-res-only">
+        <div class="res-container">
+            <h3>📞 전화 상담 예약하기</h3>
+            <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
+            <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
+            <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
+        </div>
+    </div>
+</div>
     <div id="tab3" class="tab-content">
         <img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg"><img src="img/17.jpg"><img src="img/18.jpg"><img src="img/19.jpg">
         <div class="reservation-card mobile-res-only">
@@ -687,13 +736,24 @@
             else document.querySelector('.filter-btn').click();
         }
 
-        // 7. 평면도 평형 필터링
+       // 7. 평면도 평형 필터링 (수정됨)
         function filterSize(e, s) {
-            document.querySelectorAll('#1BL-view .type-group, .filter-btn').forEach(x => x.classList.remove('active'));
-            document.getElementById(s).classList.add('active');
-            e.currentTarget.classList.add('active');
-            document.getElementById(s).querySelector('.sub-tab-btn').click();
-            // window.scrollTo({top: 0, behavior: 'smooth'});
+            // 현재 눌린 버튼이 속한 부모 mode-content(1BL-view 또는 2BL-view)를 찾습니다.
+            const parentMode = e.currentTarget.closest('.mode-content');
+            
+            // 해당 부모 안의 type-group과 filter-btn만 active 해제
+            parentMode.querySelectorAll('.type-group, .filter-btn').forEach(x => x.classList.remove('active'));
+            
+            // 선택한 그룹과 버튼 활성화
+            const targetGroup = document.getElementById(s);
+            if (targetGroup) {
+                targetGroup.classList.add('active');
+                e.currentTarget.classList.add('active');
+                
+                // 해당 그룹 내부의 첫 번째 서브탭 버튼 자동 클릭
+                const subBtn = targetGroup.querySelector('.sub-tab-btn');
+                if (subBtn) subBtn.click();
+            }
         }
 
         // 8. 서브 탭 제어
