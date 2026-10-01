@@ -389,30 +389,31 @@
             
             .business-card, #pcResCard { 
                 position: fixed; 
-                top: 50%; /* 수직 중앙 정렬로 교정 */
-                width: 320px; 
-                z-index: 1100; 
+                top: 180px !important; /* 상단 배너 아래쪽부터 깔끔하게 시작 */
+                transform: none !important; /* 위로 밀어올리던 translateY 제거 */
+                width: 310px; 
+                z-index: 2500 !important; /* 탭 메뉴(z-index: 2000)보다 위에 배치 */
                 border: 1px solid rgba(178, 137, 112, 0.3); 
                 border-radius: 24px; 
-                background: rgba(255, 255, 255, 0.95); 
+                background: rgba(255, 255, 255, 0.98); 
                 backdrop-filter: blur(10px); 
-                box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
+                box-shadow: 0 20px 50px -10px rgba(21, 47, 71, 0.18); 
                 transition: all 0.3s ease; 
-                transform: translateY(-50%);
                 
-                /* 상단 짤림 방지 및 화면 맞춤 설정 */
-                max-height: calc(100vh - 40px);
+                /* 화면 세로가 짧을 때 위아래 짤림 방지 */
+                max-height: calc(100vh - 200px);
                 overflow-y: auto;
             }
             
-            .business-card { left: 30px; }
-            #pcResCard { right: 30px; padding: 0; }
+            .business-card { left: 25px; }
+            #pcResCard { right: 25px; padding: 0; }
             
+            /* 스크롤을 내려도 위치 유지를 위해 수직 이동 제거 */
             .business-card.scrolled, #pcResCard.scrolled { 
-                top: 50% !important; 
+                top: 180px !important; 
             }
 
-            /* 스크롤바 바 두께/색상 깔끔하게 맞춤 */
+            /* 카드 내부 스크롤바 디자인 */
             .business-card::-webkit-scrollbar,
             #pcResCard::-webkit-scrollbar {
                 width: 4px;
@@ -425,7 +426,7 @@
 
             /* PC 카드 내부 여백 최적화 */
             #pcResCard .res-container {
-                padding: 20px 18px !important;
+                padding: 20px 16px !important;
                 background: #ffffff !important;
                 border-radius: 24px !important;
             }
