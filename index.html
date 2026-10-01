@@ -84,7 +84,7 @@
             transform: translateY(-2px);
         }
 
-        /* [2. 방문 상담 예약 폼 (원본 럭셔리 스타일 전용)] */
+        /* [2. 방문 상담 예약 폼] */
         .reservation-card {
             width: 100%;
             max-width: 900px;
@@ -202,13 +202,12 @@
 
         .form-field label .req { color: #e11d48; }
 
-        /* 기존 .form-field input 스타일에 box-sizing 및 너비 강제 추가 및 select/textarea 적용 */
         .form-field input,
         .form-field select,
         .form-field textarea {
             width: 100% !important;
             max-width: 100% !important;
-            box-sizing: border-box !important; /* 패딩 포함 너비 계산 */
+            box-sizing: border-box !important;
             padding: 13px 14px;
             border: 1.5px solid #cbd5e1;
             border-radius: 8px;
@@ -218,7 +217,7 @@
             background: #f8fafc;
             outline: none;
             transition: border-color 0.2s, background 0.2s;
-            -webkit-appearance: none; /* 브라우저 기본 형태 제거 */
+            -webkit-appearance: none;
             appearance: none;
         }
 
@@ -227,32 +226,24 @@
             min-height: 80px;
         }
         
-        /* 모바일 날짜 선택창 너비 100% 고정 및 캘린더 아이콘 표시 */
         .form-field input[type="date"] {
             width: 100% !important;
             min-width: 100% !important;
             box-sizing: border-box !important;
             display: block !important;
             position: relative;
-            
-            /* 달력 아이콘 배경 처리 (모바일 공통) */
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23152f47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>');
             background-repeat: no-repeat;
             background-position: right 14px center;
             background-size: 18px 18px;
-            padding-right: 40px !important; /* 아이콘과 글자 겹침 방지 */
+            padding-right: 40px !important;
         }
 
-        /* Chrome / Safari 모바일 고유 달력 아이콘 보이기 및 오버레이 조정 */
         .form-field input[type="date"]::-webkit-calendar-picker-indicator {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0; /* 터치 영역을 박스 전체로 확대 */
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
             cursor: pointer;
         }
 
@@ -382,14 +373,13 @@
         #num-view .type-group.active { display: block !important; }
         .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 
-        
-       /* [4. PC 고정 카드 및 반응형 제어] */
+        /* [4. PC 고정 카드 및 반응형 제어] */
         @media (min-width: 1024px) {
             .size-filter { justify-content: center; }
             
             .business-card, #pcResCard { 
                 position: fixed !important; 
-                top: 68% !important; /* 맨 위일 때는 화면 하단 쪽에 배치 (필요시 65%~70% 조절 가능) */
+                top: 68% !important;
                 transform: translateY(-50%) !important; 
                 width: 310px; 
                 z-index: 2500 !important; 
@@ -398,7 +388,7 @@
                 background: rgba(255, 255, 255, 0.98); 
                 backdrop-filter: blur(10px); 
                 box-shadow: 0 20px 50px -10px rgba(21, 47, 71, 0.18); 
-                transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* 위치 이동을 부드럽게 애니메이션 처리 */
+                transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
                 
                 max-height: calc(100vh - 80px);
                 overflow-y: auto;
@@ -407,12 +397,10 @@
             .business-card { left: 30px; }
             #pcResCard { right: 30px; padding: 0; }
             
-            /* 스크롤을 내리면 화면 중앙(top: 50%)으로 이동 */
             .business-card.scrolled, #pcResCard.scrolled { 
                 top: 50% !important; 
             }
 
-            /* 카드 내부 스크롤바 디자인 */
             .business-card::-webkit-scrollbar,
             #pcResCard::-webkit-scrollbar {
                 width: 4px;
@@ -423,7 +411,6 @@
                 border-radius: 4px;
             }
 
-            /* PC 카드 내부 여백 및 폼 최적화 */
             #pcResCard .res-container {
                 padding: 20px 16px !important;
                 background: #ffffff !important;
@@ -512,20 +499,28 @@
             <input type="text" id="pcName" class="res-input" placeholder="성함">
             <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만)">
             <input type="date" id="pcDate" class="res-input">
+            <select id="pcTime" class="res-input">
+                <option value="">방문 희망 시간 (선택)</option>
+                <option value="10:00">10:00</option>
+                <option value="11:00">11:00</option>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="15:00">15:00</option>
+                <option value="16:00">16:00</option>
+                <option value="17:00">17:00</option>
+                <option value="18:00">18:00</option>
+            </select>
             <select id="pcType" class="res-input">
                 <option value="">관심 평형 선택 (선택)</option>
-                <option value="상담 후 결정">상담 후 결정</option>
-                <option value="75㎡">75㎡</option>
-                <option value="84㎡ A">84㎡ A</option>
-                <option value="84㎡ B">84㎡ B</option>
-                <option value="84㎡ C">84㎡ C</option>
-                <option value="84㎡ D">84㎡ D (1BL ONLY)</option>
-                <option value="102㎡">102㎡</option>
-                <option value="104㎡">104㎡</option>
-                <option value="166㎡ PH">166㎡ PH (펜트하우스)</option>
+                <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
+                <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
+                <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
             </select>
             <textarea id="pcMemo" class="res-input" placeholder="문의 및 요청사항 (선택)"></textarea>
-            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone', 'pcDate', 'pcType', 'pcMemo')">✉️ 방문 예약 신청</button>
+            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone', 'pcDate', 'pcTime', 'pcType', 'pcMemo')">✉️ 방문 예약 신청</button>
         </div>
     </div>
 
@@ -555,7 +550,6 @@
     <div id="tab1" class="tab-content active">
         <img src="img/102.jpg"><img src="img/1.jpg"><img src="img/2.jpg"><img src="img/3.jpg"><img src="img/4.jpg"><img src="img/5.jpg">
         
-        <!-- 원본 방문상담 예약 폼 (모바일) -->
         <div class="reservation-card mobile-res-only">
             <div class="reserve-form-card">
                 <div class="reserve-left-info">
@@ -588,25 +582,36 @@
                             <input type="date" id="mDate1">
                         </div>
                         <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime1">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType1">
-                                 <option value="">관심 평형 선택 (선택)</option>
-                                <option value="상담 후 결정">상담 후 결정</option>
-                                <option value="75㎡">75㎡</option>
-                                <option value="84㎡ A">84㎡ A</option>
-                                <option value="84㎡ B">84㎡ B</option>
-                                <option value="84㎡ C">84㎡ C</option>
-                                <option value="84㎡ D">84㎡ D (1BL ONLY)</option>
-                                <option value="102㎡">102㎡</option>
-                                <option value="104㎡">104㎡</option>
-                                <option value="166㎡ PH">166㎡ PH (펜트하우스)</option>
+                                <option value="">평형을 선택해주세요 (선택)</option>
+                                <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                                <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
+                                <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                                <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
+                                <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
                             </select>
                         </div>
                         <div class="form-field">
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo1" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
                         </div>
-                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName1', 'mPhone1', 'mDate1', 'mType1', 'mMemo1')">방문 예약 신청하기</button>
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName1', 'mPhone1', 'mDate1', 'mTime1', 'mType1', 'mMemo1')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
                 </div>
@@ -751,21 +756,36 @@
                             <input type="date" id="mDate3">
                         </div>
                         <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime3">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType3">
                                 <option value="">평형을 선택해주세요 (선택)</option>
-                                <option value="75㎡">75㎡</option>
-                                <option value="84㎡">84㎡</option>
-                                <option value="102㎡">102㎡</option>
-                                <option value="104㎡">104㎡</option>
-                                <option value="166㎡ PH">166㎡ PH</option>
+                                <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                                <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
+                                <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                                <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
+                                <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
                             </select>
                         </div>
                         <div class="form-field">
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo3" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
                         </div>
-                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName3', 'mPhone3', 'mDate3', 'mType3', 'mMemo3')">방문 예약 신청하기</button>
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName3', 'mPhone3', 'mDate3', 'mTime3', 'mType3', 'mMemo3')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
                 </div>
@@ -808,21 +828,36 @@
                             <input type="date" id="mDate2">
                         </div>
                         <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime2">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType2">
                                 <option value="">평형을 선택해주세요 (선택)</option>
-                                <option value="75㎡">75㎡</option>
-                                <option value="84㎡">84㎡</option>
-                                <option value="102㎡">102㎡</option>
-                                <option value="104㎡">104㎡</option>
-                                <option value="166㎡ PH">166㎡ PH</option>
+                                <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                                <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
+                                <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                                <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
+                                <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
                             </select>
-                        </div>
-                        <div class="form-field">
+                        </div> -->
+                        <!-- <div class="form-field">
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo2" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
-                        </div>
-                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName2', 'mPhone2', 'mDate2', 'mType2', 'mMemo2')">방문 예약 신청하기</button>
+                        </div> -->
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName2', 'mPhone2', 'mDate2', 'mTime2', 'mType2', 'mMemo2')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
                 </div>
@@ -865,21 +900,36 @@
                             <input type="date" id="mDate5">
                         </div>
                         <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime5">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="12:00">12:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                            </select>
+                        </div>
+                        <!-- <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType5">
                                 <option value="">평형을 선택해주세요 (선택)</option>
-                                <option value="75㎡">75㎡</option>
-                                <option value="84㎡">84㎡</option>
-                                <option value="102㎡">102㎡</option>
-                                <option value="104㎡">104㎡</option>
-                                <option value="166㎡ PH">166㎡ PH</option>
+                                <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                                <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
+                                <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                                <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
+                                <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
                             </select>
                         </div>
                         <div class="form-field">
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo5" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
-                        </div>
-                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName5', 'mPhone5', 'mDate5', 'mType5', 'mMemo5')">방문 예약 신청하기</button>
+                        </div> -->
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName5', 'mPhone5', 'mDate5', 'mTime5', 'mType5', 'mMemo5')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
                 </div>
@@ -922,11 +972,12 @@
             });
         });
 
-        // 3. 문자 예약 제출 기능 (날짜, 관심 평형, 요청사항 포함)
-        function sendReservation(nameId, phoneId, dateId, typeId, memoId) {
+        // 3. 문자 예약 제출 기능 (날짜, 시간, 관심 평형, 요청사항 포함)
+        function sendReservation(nameId, phoneId, dateId, timeId, typeId, memoId) {
             const name = document.getElementById(nameId)?.value;
             let rawPhone = document.getElementById(phoneId)?.value;
             const dateVal = dateId ? document.getElementById(dateId)?.value : "";
+            const timeVal = timeId ? document.getElementById(timeId)?.value : "";
             const typeVal = typeId ? document.getElementById(typeId)?.value : "";
             const memoVal = memoId ? document.getElementById(memoId)?.value : "";
             
@@ -947,11 +998,16 @@
             }
         
             let extraText = "";
-            if (dateVal) extraText += `\n- 방문 희망일: ${dateVal}`;
+            if (dateVal) {
+                extraText += `\n- 방문 희망일: ${dateVal}`;
+                if (timeVal) extraText += ` ${timeVal}`;
+            } else if (timeVal) {
+                extraText += `\n- 방문 희망시간: ${timeVal}`;
+            }
             if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
-            if (memoVal) extraText += `\n- 문의 사항: ${memoVal}`;
+            if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
 
-            const message = `<오산 헤리티지자이 방문/상담 예약>\n ${name}\n${formattedPhone} ${extraText}`;
+            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 오산 헤리티지자이 방문/상담 예약 신청합니다.${extraText}`;
             
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
