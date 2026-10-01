@@ -202,9 +202,12 @@
 
         .form-field label .req { color: #e11d48; }
 
+                /* 기존 .form-field input 스타일에 box-sizing 및 너비 강제 추가 */
         .form-field input,
         .form-field select {
-            width: 100%;
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important; /* 패딩 포함 너비 계산 */
             padding: 13px 14px;
             border: 1.5px solid #cbd5e1;
             border-radius: 8px;
@@ -214,7 +217,18 @@
             background: #f8fafc;
             outline: none;
             transition: border-color 0.2s, background 0.2s;
+            -webkit-appearance: none; /* 브라우저 기본 형태 제거 */
+            appearance: none;
         }
+        
+        /* ★ 추가: 모바일 날짜 선택창(type="date") 너비 강제 고정 ★ */
+        .form-field input[type="date"] {
+            width: 100% !important;
+            min-width: 100% !important;
+            box-sizing: border-box !important;
+            display: block !important;
+        }
+        
 
         .form-field input:focus,
         .form-field select:focus {
@@ -437,7 +451,6 @@
         </div>
     </div>
 
-    <!-- PC 오른쪽 고정 방문 예약 카드 -->
     <!-- PC 오른쪽 고정 방문 예약 카드 -->
     <div id="pcResCard">
         <div class="res-container">
