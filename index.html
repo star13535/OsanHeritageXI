@@ -374,14 +374,15 @@
         .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }  */
 /* [3. 타이틀, 배너 및 탭 메뉴] */
         .main-title { 
-            background-color: #ffffff; 
-            padding: 45px 20px 35px; 
+            background: linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%); 
+            padding: 50px 20px 40px; 
             position: relative; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            min-height: 150px; 
-            border-bottom: 1px solid #eef0f2;
+            min-height: 160px; 
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: inset 0 -10px 20px -10px rgba(21, 47, 71, 0.03);
         }
         
         .main-title .inner-logo { 
@@ -392,12 +393,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
 
-        /* 메인 제목 */
+        /* 메인 제목 : 깊이감 있는 그림자 및 입체 타이포그래피 */
         .main-title h2 { 
-            font-size: 38px !important; 
+            font-size: 40px !important; 
             font-weight: 900 !important; 
             color: #152f47 !important; 
             letter-spacing: -1.5px !important; 
@@ -405,21 +406,31 @@
             word-break: keep-all !important; 
             margin: 0 !important;
             padding: 0 !important;
+            /* 입체 텍스트 그림자 기법 */
+            text-shadow: 0 2px 4px rgba(21, 47, 71, 0.12), 0 8px 24px rgba(21, 47, 71, 0.08) !important;
         }
 
-        /* 부제목 */
+        /* 부제목 : 입체형 입체 뱃지 & 고급 드롭 섀도우 */
         .main-title p { 
             font-size: 17px !important; 
-            color: #b28970 !important; 
+            color: #8c6246 !important; 
             margin: 0 !important; 
             word-break: keep-all !important; 
             font-weight: 700 !important; 
             letter-spacing: -0.5px !important;
             display: inline-block !important;
-            padding: 6px 18px !important;
-            background: #faf6f0 !important;
-            border-radius: 30px !important;
-            border: 1.5px solid rgba(178, 137, 112, 0.3) !important;
+            padding: 8px 22px !important;
+            background: linear-gradient(135deg, #ffffff 0%, #faf5ef 100%) !important;
+            border-radius: 50px !important;
+            border: 1.5px solid rgba(178, 137, 112, 0.4) !important;
+            /* 플로팅 입체 그림자 */
+            box-shadow: 0 6px 16px -2px rgba(178, 137, 112, 0.25), 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+        }
+
+        .main-title p:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 20px -2px rgba(178, 137, 112, 0.32) !important;
         }
 
         /* 띠 배너 */
@@ -431,6 +442,7 @@
             font-weight: 700; 
             border-top: 1px solid #b28970; 
             border-bottom: 1px solid #b28970; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             animation: bannerPulse 3s infinite ease-in-out; 
         }
         .point-banner a { color: #b28970; text-decoration: none; border-bottom: 1px solid rgba(178, 137, 112, 0.5); }
@@ -439,7 +451,7 @@
             50% { background-color: #152f47; } 
         }
 
-        /* 탭 메뉴 전체 너비 및 스타일 복구 */
+        /* 탭 메뉴 전체 스타일 */
         .tab-menu { 
             display: flex !important; 
             flex-wrap: nowrap !important; 
@@ -452,6 +464,7 @@
             width: 100% !important;
             margin: 0 !important;
             padding: 0 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
         }
         .tab-btn { 
             flex: 1 !important; 
@@ -466,6 +479,7 @@
             border-right: 1px solid #eef0f2 !important; 
             border-radius: 0 !important;
             margin: 0 !important;
+            transition: background 0.2s, color 0.2s !important;
         }
         .tab-btn:last-child { border-right: none !important; }
         .tab-btn.active { background: #152f47 !important; color: #fff !important; font-weight: 700 !important; }
@@ -478,6 +492,7 @@
                 top: 50%; 
                 transform: translateY(-50%); 
                 height: 70px; 
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
             }
             .main-title .inner-logo img { 
                 height: 100%; 
@@ -486,9 +501,9 @@
         }
 
         @media (max-width: 768px) {
-            .main-title { padding: 30px 15px 25px; }
-            .main-title h2 { font-size: 26px !important; }
-            .main-title p { font-size: 13.5px !important; padding: 5px 12px !important; }
+            .main-title { padding: 35px 15px 30px; }
+            .main-title h2 { font-size: 27px !important; }
+            .main-title p { font-size: 13.5px !important; padding: 6px 14px !important; }
             .tab-btn { font-size: 14px !important; padding: 14px 2px !important; }
         }
 
