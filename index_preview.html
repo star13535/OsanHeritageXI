@@ -8,13 +8,13 @@
     </script>
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="오산 헤리티지 자이 - 장영희 팀장">
-    <meta property="og:description" content="오산, 동탄, 수원 생활권을 연결하는 병점역의 신거주타운! 오산 헤리티지 자이">
+    <meta property="og:title" content="오산 헤리티지 자이 | 공식 분양홍보관 (장영희 팀장 010-3323-0322)">
+    <meta property="og:description" content="오산의 새로운 랜드마크! GTX-C·동탄트램 더블호재, 1·2BL 총 1,783세대 대단지. 선착순 로열층 동·호지정 상담">
     <meta property="og:image" content="https://star13535.github.io/OsanHeritageXI/img/JYH.JPG">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
-    <title>오산 헤리티지 자이 - 장영희 팀장</title>
+    <title>오산 헤리티지 자이 | 공식 분양홍보관 (장영희 팀장 010-3323-0322)</title>
     
     <link rel="icon" href="img/logo.png" type="image/jpg">
     <!-- Google Fonts: Noto Sans KR & Luxury Outfit -->
@@ -22,288 +22,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- 최신 상단 헤더 & 히어로 섹션 전용 스타일 -->
-    <link rel="stylesheet" href="top_design.css">
+    <!-- 최신 럭셔리 원페이지 스타일시트 -->
+    <link rel="stylesheet" href="top_design.css?v=3.0">
 
     <style>
-        /* [공통 설정 - THE LIV 브랜드 테마 반영: 프리미엄 다크 네이비 & 브라운 골드 톤] */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             font-family: 'Noto Sans KR', sans-serif; 
             background-color: #faf9f6; 
             color: #152232; 
-            text-align: center; 
             -webkit-font-smoothing: antialiased;
+            word-break: keep-all;
+            word-wrap: break-word;
         }
         img { width: 100%; height: auto; display: block; vertical-align: middle; }
-
-        /* [2. 명함 & 예약 폼 섹션] */
-        .business-card, .reservation-card { 
-            width: 100%; 
-            background: #fff; 
-            padding: 40px 20px; 
-            border-bottom: 1px solid #eef0f2; 
-        }
-        .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
-        .card-container img { 
-            border-radius: 16px; 
-            border: 1px solid rgba(178, 137, 112, 0.25); 
-            box-shadow: 0 15px 35px -5px rgba(21, 47, 71, 0.08); 
-            transition: transform 0.3s;
-        }
-        .card-container img:hover {
-            transform: translateY(-4px);
-        }
-        .card-btn-call { 
-            display: block; 
-            margin-top: 20px; 
-            padding: 15px 0; 
-            background: linear-gradient(135deg, #152f47, #0f2233); 
-            color: #fff; 
-            text-decoration: none; 
-            border-radius: 12px; 
-            font-size: 15px; 
-            font-weight: 700; 
-            letter-spacing: -0.5px;
-            box-shadow: 0 8px 16px -4px rgba(21, 47, 71, 0.3);
-            border: 1px solid rgba(178, 137, 112, 0.3); 
-            transition: all 0.3s;
-        }
-        .card-btn-call:hover {
-            background: linear-gradient(135deg, #b28970, #96715b); 
-            border-color: #96715b;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -4px rgba(178, 137, 112, 0.4);
-        }
-
-        .res-container { 
-            border: 1px solid #b28970; 
-            border-radius: 24px; 
-            padding: 30px 24px; 
-            background: linear-gradient(135deg, #112538, #1c3d5c); 
-            box-shadow: 0 20px 40px -10px rgba(21, 47, 71, 0.3); 
-            color: #fff; 
-        }
-        .res-container h3 { 
-            font-size: 19px; 
-            color: #b28970; 
-            margin-bottom: 20px; 
-            font-weight: 700; 
-            letter-spacing: -0.5px;
-        }
-        .res-input { 
-            width: 100%; 
-            padding: 14px 16px; 
-            margin-bottom: 12px; 
-            border: 1px solid rgba(178, 137, 112, 0.3); 
-            border-radius: 10px; 
-            font-size: 14px; 
-            background: rgba(255, 255, 255, 0.98); 
-            color: #152f47;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        .res-input:focus {
-            outline: none;
-            border-color: #b28970;
-            box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.2);
-        }
-        .res-btn { 
-            width: 100%; 
-            padding: 15px; 
-            background: linear-gradient(135deg, #b28970, #96715b); 
-            color: #ffffff; 
-            border: none; 
-            border-radius: 10px; 
-            font-size: 15px; 
-            font-weight: 700; 
-            cursor: pointer; 
-            box-shadow: 0 6px 20px rgba(178, 137, 112, 0.3);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .res-btn:hover {
-            transform: translateY(-2px); 
-            box-shadow: 0 8px 25px rgba(178, 137, 112, 0.45);
-            filter: brightness(1.05);
-        }
-
-        /* [4. 탭 메뉴: 상단 네비게이션 바로 아래에 고정되도록 top 위치 조정] */
-        .tab-menu { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            background: #fff; 
-            position: sticky; 
-            top: 56px; 
-            z-index: 2000; 
-            border-bottom: 2px solid #152f47; 
-            box-shadow: 0 4px 20px rgba(21, 47, 71, 0.08);
-        }
-        .tab-btn { 
-            flex: 1; 
-            min-width: 20%; 
-            padding: 18px 5px; 
-            border: none; 
-            background: #fff; 
-            font-size: 15px; 
-            font-weight: 500; 
-            color: #5c6b73; 
-            cursor: pointer; 
-            border-right: 1px solid #eef0f2; 
-            transition: all 0.3s;
-        }
-        .tab-btn:hover {
-            color: #152f47;
-            background: #f8fafc;
-        }
-        .tab-btn.active { 
-            background: #152f47; 
-            color: #fff; 
-            font-weight: 700;
-        }
-
-        .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
-        .tab-content.active { display: block !important; }
-
-        /* [5. 탭 콘텐츠 & 복합 필터] */
-        .view-mode-selector { 
-            display: flex; 
-            background: #f1f3f5; 
-            margin: 0; 
-            padding: 12px; 
-            position: sticky; 
-            top: 112px; 
-            z-index: 1500; 
-            border-bottom: 1px solid #e2e6ea; 
-        }
-        .mode-btn { 
-            flex: 1; 
-            padding: 12px; 
-            border: none; 
-            background: #e2e6ea; 
-            font-weight: 700; 
-            color: #5c6b73; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            margin: 0 5px; 
-            transition: all 0.2s;
-        }
-        .mode-btn.active { 
-            background: #152f47; 
-            color: #fff; 
-        }
-        .mode-content, .sub-tab-content { display: none; }
-        .mode-content.active, .sub-tab-content.active { display: block !important; }
-        
-        .size-filter, .type-group.active { 
-            position: sticky; 
-            top: 170px; 
-            z-index: 1000; 
-            background: #fff; 
-            border-bottom: 1px solid #eef0f2; 
-            transition: all 0.3s ease; 
-        }
-        .size-filter.scrolled, .type-group.active.scrolled { 
-            background: transparent !important; 
-            border-bottom: none !important; 
-        }
-        
-        .swipe-hint-text {
-            display: none;
-            font-size: 11px;
-            color: #b28970;
-            margin-top: 15px;
-            margin-bottom: -5px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
-
-        .size-filter { 
-            display: flex; 
-            justify-content: flex-start; 
-            gap: 8px; 
-            padding: 16px 12px 24px 12px; 
-            overflow-x: auto; 
-            scrollbar-width: thin; 
-            scrollbar-color: #b28970 #eef0f2; 
-        }
-
-        @media (max-width: 1023px) {
-            .swipe-hint-text {
-                display: block; 
-                animation: pulseSwipeHint 2s infinite ease-in-out;
-            }
-            .size-filter::-webkit-scrollbar { 
-                display: block !important;
-                height: 3px; 
-            }
-            .size-filter::-webkit-scrollbar-track {
-                background: #eef0f2; 
-                border-radius: 10px;
-            }
-            .size-filter::-webkit-scrollbar-thumb {
-                background: #b28970; 
-                border-radius: 10px;
-            }
-        }
-        
-        @keyframes pulseSwipeHint {
-            0%, 100% { opacity: 0.6; transform: scale(0.98); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-
-        .filter-btn, .sub-tab-btn { 
-            flex: 0 0 auto; 
-            min-width: 95px; 
-            padding: 10px 18px; 
-            border: 1px solid #152f47; 
-            background: #fff; 
-            color: #152f47; 
-            border-radius: 8px; 
-            font-weight: 700; 
-            cursor: pointer; 
-            transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        .filter-btn.active, .sub-tab-btn.active { 
-            background: #152f47; 
-            color: #fff; 
-            border-color: #152f47;
-            box-shadow: 0 4px 8px rgba(21, 47, 71, 0.3);
-        }
-        
-        .sub-tab-menu { 
-            display: flex; 
-            justify-content: center; 
-            gap: 8px; 
-            padding: 14px 12px; 
-            background: #fff; 
-        }
-
-        /* [7. 모바일 레이아웃] */
-        @media (max-width: 1023px) {
-            .reservation-card { 
-                position: static; 
-                border: none; 
-                border-top: 8px solid #eef0f2; 
-                padding: 40px 20px; 
-                background: #fcfdfe; 
-            }
-            #resCard { display: none; } 
-            .tab-menu { top: 52px; }
-            .view-mode-selector { top: 104px; }
-            .size-filter, .type-group.active { top: 156px; }
-        }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; }
     </style>
 </head>
 <body>
 
     <!-- ==========================================================================
-       [최신 프리미엄 디자인 - 상단 네비게이션 & 히어로 & 명함 배너]
+       [1. 상단 네비게이션 바 (Sticky)]
        ========================================================================== -->
-
-    <!-- 1. 상단 네비게이션 바 -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-brand">
@@ -315,12 +56,13 @@
                 </div>
             </a>
 
+            <!-- 상단 원페이지 스크롤 메뉴 -->
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab1')">사업개요</a></li>
-                <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab2')">단지&세대안내</a></li>
-                <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab3')">시장환경</a></li>
-                <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab4')">프리미엄</a></li>
-                <li><a href="#reserveSection" onclick="scrollToReservation()">사전 방문예약</a></li>
+                <li><a href="#overview" onclick="scrollToSection(event, 'overview')">사업개요</a></li>
+                <li><a href="#premium" onclick="scrollToSection(event, 'premium')">프리미엄</a></li>
+                <li><a href="#complex" onclick="scrollToSection(event, 'complex')">단지안내</a></li>
+                <li><a href="#units" onclick="scrollToSection(event, 'units')">세대안내(평면도)</a></li>
+                <li><a href="#reserve" onclick="scrollToSection(event, 'reserve')">사전 방문예약</a></li>
             </ul>
 
             <div class="nav-right">
@@ -342,11 +84,11 @@
     <!-- 모바일 드롭다운 메뉴 -->
     <div class="mobile-nav-drawer" id="mobileNavDrawer">
         <ul class="mobile-nav-links">
-            <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab1'); closeMobileMenu();">사업개요</a></li>
-            <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab2'); closeMobileMenu();">단지&세대안내</a></li>
-            <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab3'); closeMobileMenu();">시장환경</a></li>
-            <li><a href="#tabMenuSection" onclick="selectTabAndScroll('tab4'); closeMobileMenu();">프리미엄</a></li>
-            <li><a href="#reserveSection" onclick="scrollToReservation(); closeMobileMenu();">사전 방문예약 신청</a></li>
+            <li><a href="#overview" onclick="scrollToSection(event, 'overview'); closeMobileMenu();">사업개요</a></li>
+            <li><a href="#premium" onclick="scrollToSection(event, 'premium'); closeMobileMenu();">프리미엄</a></li>
+            <li><a href="#complex" onclick="scrollToSection(event, 'complex'); closeMobileMenu();">단지안내 (동호수표)</a></li>
+            <li><a href="#units" onclick="scrollToSection(event, 'units'); closeMobileMenu();">세대안내 (공식 평면도)</a></li>
+            <li><a href="#reserve" onclick="scrollToSection(event, 'reserve'); closeMobileMenu();">사전 방문예약 신청</a></li>
         </ul>
         <div class="mobile-nav-contact">
             <span class="contact-sub">분양 총괄 상담실장</span>
@@ -355,7 +97,9 @@
         </div>
     </div>
 
-    <!-- 2. 메인 히어로 섹션 -->
+    <!-- ==========================================================================
+       [2. 메인 히어로 섹션]
+       ========================================================================== -->
     <section class="hero-section" id="hero">
         <div class="hero-bg-media">
             <img src="assets/hero-exterior.jpg" alt="오산 헤리티지 자이 노을빛 랜드마크 조감도" class="hero-bg-img">
@@ -420,7 +164,7 @@
 
             <!-- 액션 버튼 그룹 -->
             <div class="hero-cta-group">
-                <a href="#reserveSection" onclick="scrollToReservation()" class="cta-btn primary-gold">
+                <a href="#reserve" onclick="scrollToSection(event, 'reserve')" class="cta-btn primary-gold">
                     <span>📋</span>
                     <span>사전 방문예약 신청</span>
                 </a>
@@ -450,7 +194,9 @@
         </div>
     </section>
 
-    <!-- 3. 분양총괄 담당자 공식 명함 배너 -->
+    <!-- ==========================================================================
+       [3. 분양총괄 담당자 공식 명함 배너]
+       ========================================================================== -->
     <section class="officer-hero-banner">
         <div class="officer-banner-card">
             <div class="officer-card-preview-box" onclick="openImageModal('assets/card-jang.jpg', '오산 헤리티지 자이 분양총괄 장영희 팀장 공식 명함')">
@@ -482,299 +228,402 @@
         </div>
     </section>
 
-    <!-- [이전 구버전 상단 명함/배너: 위 새로운 럭셔리 디자인으로 대체되어 주석 처리됨]
-    <div class="business-card" id="pcCard">
-        <div class="card-container">
-            <img src="img/JYH.JPG" alt="명함">
-            <a href="#" class="card-btn-call set-phone-link">
-                📞 <span class="set-name"></span> 팀장 상담 바로 연결
-            </a>     
-        </div>
-    </div>
-    
-    <div class="main-title">
-        <div class="inner-logo"><img src="img/logo.png" alt="자이 로고"></div>
-        <div class="title-text">
-            <h2>오산 헤리티지 자이</h2>
-            <p>오산,동탄,수원 생활권을 연결하는 병점역의 신거주타운!</p>
-        </div>
-    </div>
-    
-    <div class="point-banner">
-        ✨ <span class="set-name"></span> 팀장 : 
-        <a href="#" class="set-phone-link">
-            <span class="set-phone-text"></span>
-        </a> ✨
-    </div>
-    -->
+    <!-- ==========================================================================
+       [SECTION 1: 사업개요 (Project Overview)]
+       ========================================================================== -->
+    <section class="content-section" id="overview">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-kicker">PROJECT OVERVIEW</span>
+                <h2 class="section-title">오산 헤리티지 자이 <span class="gold-text">사업개요</span></h2>
+                <p class="section-desc">오산의 하늘을 밝히는 최고의 랜드마크 대단지 (1BL·2BL 총 1,783세대)</p>
+            </div>
 
-    <!-- PC 및 메인 전화 상담 예약하기 폼 -->
-    <div class="reservation-card" id="reserveSection">
-        <div class="res-container">
-            <h3>📞 전화 상담 및 방문 예약하기</h3>
-            <input type="text" id="pcName" class="res-input" placeholder="성함">
-            <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만 입력)">
-            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone')">✉️ 상담 및 방문예약 신청</button>
+            <!-- 사업개요 고화질 브로셔 갤러리 -->
+            <div class="section-image-gallery">
+                <img src="img/102.jpg" alt="오산 헤리티지 자이 사업개요 1">
+                <img src="img/1.jpg" alt="오산 헤리티지 자이 사업개요 2">
+                <img src="img/2.jpg" alt="오산 헤리티지 자이 투시도">
+                <img src="img/3.jpg" alt="오산 헤리티지 자이 조감도">
+                <img src="img/4.jpg" alt="오산 헤리티지 자이 입지환경">
+                <img src="img/5.jpg" alt="오산 헤리티지 자이 비전">
+            </div>
+
+            <!-- 중간 상담 CTA 바 -->
+            <div class="mid-section-cta">
+                <div class="mid-cta-text">
+                    <h4>🏢 오산 헤리티지 자이 공식 분양가 및 계약 혜택 안내</h4>
+                    <p>로열 동·호수 선점 및 1차 계약금 정액제 혜택을 지금 바로 확인하세요.</p>
+                </div>
+                <div class="mid-cta-btns">
+                    <a href="tel:01033230322" class="mid-btn-call set-phone-link">📞 직통 전화 문의</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       [SECTION 2: 프리미엄 & 시장환경 (Premium Vision)]
+       ========================================================================== -->
+    <section class="content-section dark-alt" id="premium">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-kicker">PREMIUM VISION</span>
+                <h2 class="section-title">오산의 중심을 누리는 <span class="gold-text">입지 프리미엄</span></h2>
+                <p class="section-desc">GTX-C·동탄트램 더블 교통망과 K-반도체 메가 클러스터 배후 주거특권</p>
+            </div>
+
+            <!-- 프리미엄 브로셔 갤러리 -->
+            <div class="section-image-gallery">
+                <img src="img/100.jpg" alt="프리미엄 하이라이트">
+                <img src="img/101.jpg" alt="광역 교통망">
+                <img src="img/9.jpg" alt="시장환경 분석 1">
+                <img src="img/10.jpg" alt="시장환경 분석 2">
+                <img src="img/12.jpg" alt="프리미엄 1">
+                <img src="img/13.jpg" alt="프리미엄 2">
+                <img src="img/14.jpg" alt="프리미엄 3">
+                <img src="img/15.jpg" alt="프리미엄 4">
+                <img src="img/16.jpg" alt="프리미엄 5">
+                <img src="img/17.jpg" alt="프리미엄 6">
+                <img src="img/18.jpg" alt="프리미엄 7">
+                <img src="img/21.jpg" alt="프리미엄 8">
+            </div>
+
+            <!-- 중간 상담 CTA 바 -->
+            <div class="mid-section-cta">
+                <div class="mid-cta-text">
+                    <h4>✨ GTX-C 연장 &amp; 반도체 메가클러스터 최대 수혜단지</h4>
+                    <p>선착순 로열층 동·호지정 상담 및 모델하우스 사전 방문예약 접수 중</p>
+                </div>
+                <div class="mid-cta-btns">
+                    <a href="tel:01033230322" class="mid-btn-call set-phone-link">📞 로열층 잔여세대 문의</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       [SECTION 3: 단지안내 & 동호수표 (Complex Guide)]
+       ========================================================================== -->
+    <section class="content-section" id="complex">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-kicker">COMPLEX GUIDE</span>
+                <h2 class="section-title">단지 배치도 &amp; <span class="gold-text">동호수표 안내</span></h2>
+                <p class="section-desc">1BL·2BL 블록별 동호수 배치도와 클럽 자이안 커뮤니티 시설 안내</p>
+            </div>
+
+            <!-- 1BL / 2BL / 커뮤니티 선택 탭 -->
+            <div class="complex-tab-nav">
+                <button type="button" class="comp-tab-btn active" onclick="switchComplexTab(event, 'comp-1bl')">🏠 1BL 동호수표</button>
+                <button type="button" class="comp-tab-btn" onclick="switchComplexTab(event, 'comp-2bl')">🏠 2BL 동호수표</button>
+                <button type="button" class="comp-tab-btn" onclick="switchComplexTab(event, 'comp-club')">✨ 클럽 자이안 커뮤니티</button>
+            </div>
+
+            <div class="comp-tab-pane active" id="comp-1bl">
+                <div class="section-image-gallery">
+                    <img src="img/6.jpg" alt="1BL 동호수표">
+                </div>
+            </div>
+
+            <div class="comp-tab-pane" id="comp-2bl">
+                <div class="section-image-gallery">
+                    <img src="img/7.jpg" alt="2BL 동호수표">
+                </div>
+            </div>
+
+            <div class="comp-tab-pane" id="comp-club">
+                <div class="section-image-gallery">
+                    <img src="img/37.jpg" alt="1BL 클럽 자이안">
+                    <img src="img/38.jpg" alt="2BL 클럽 자이안">
+                    <img src="img/39.jpg" alt="CLUB CLOUD 스카이라운지">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       [SECTION 4: 세대안내 / 공식 혁신 평면도 (Floor Plans - 최신 디자인 버전)]
+       ========================================================================== -->
+    <section class="content-section dark-alt" id="units">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-kicker">FLOOR PLANS &amp; INTERIOR</span>
+                <h2 class="section-title">자이만의 혁신 평면 &amp; <span class="gold-text">공식 평면도</span></h2>
+                <p class="section-desc">총 1,783세대 매머드 대단지 세대 평면 안내 (원하시는 평형을 선택해 확인하세요)</p>
+            </div>
+
+            <!-- 평형 선택 탭 버튼 목록 -->
+            <div class="unit-tabs-nav" id="unitTabs">
+                <button type="button" class="unit-tab-btn" data-unit="75" onclick="onUnitTabClick('75')">75㎡ (총 91세대)</button>
+                <button type="button" class="unit-tab-btn active" data-unit="84a" onclick="onUnitTabClick('84a')">84㎡ A (총 509세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="84b" onclick="onUnitTabClick('84b')">84㎡ B (총 436세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="84c" onclick="onUnitTabClick('84c')">84㎡ C (총 446세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="84d" onclick="onUnitTabClick('84d')">84㎡ D (1BL 88세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="102" onclick="onUnitTabClick('102')">102㎡ (총 140세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="124" onclick="onUnitTabClick('124')">124㎡ (총 68세대)</button>
+                <button type="button" class="unit-tab-btn" data-unit="166ph" onclick="onUnitTabClick('166ph')">166㎡ PH (펜트 5세대)</button>
+            </div>
+
+            <!-- 대형 풀와이드 고화질 평면도 쇼케이스 박스 -->
+            <div class="unit-showcase-box" id="unitShowcase">
+                <div class="unit-card-top-bar">
+                    <div class="unit-top-info">
+                        <span class="unit-badge-pill-inline" id="unitBadge">84㎡ A 대표 프리미엄 로열 평형 (최다 세대)</span>
+                        <h3 class="unit-name-inline" id="unitTitle">84㎡ A Type <span class="unit-type-tag">4Bay 맞통풍 판상형</span></h3>
+                    </div>
+                    <button type="button" class="btn-zoom-dongho" onclick="openCurrentUnitModal()">🔍 고해상도 확대보기</button>
+                </div>
+
+                <div class="unit-visual-col" onclick="openCurrentUnitModal()">
+                    <div class="unit-img-frame">
+                        <img src="assets/84A.jpg" alt="오산 헤리티지 자이 84A 평면도" class="unit-img" id="unitImage">
+                    </div>
+                    <span class="unit-img-caption">※ 기본형 및 확장형(별도계약) 평면도 원본 (클릭 시 고해상도 확대)</span>
+                </div>
+
+                <div class="unit-bottom-action-bar">
+                    <button type="button" class="unit-act-btn zoom" onclick="openCurrentUnitModal()">
+                        🔍 고해상도 평면도 확대보기
+                    </button>
+                    <a href="tel:01033230322" class="unit-act-btn call set-phone-link">
+                        📞 직통 분양가 문의: <strong>010-3323-0322</strong>
+                    </a>
+                    <a href="#reserve" onclick="selectCurrentUnitInForm()" class="unit-act-btn reserve">
+                        📋 해당 평형 잔여세대 상담 예약
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       [SECTION 5: 모델하우스 사전 방문예약 & 상담 신청 (Reservation)]
+       ========================================================================== -->
+    <section class="content-section" id="reserve">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-kicker">VISIT RESERVATION</span>
+                <h2 class="section-title">모델하우스 사전 방문예약 &amp; <span class="gold-text">로열층 상담</span></h2>
+                <p class="section-desc">혼잡 방지 및 쾌적한 관람을 위해 100% 담당자 사전예약제로 운영됩니다.</p>
+            </div>
+
+            <div class="reserve-form-card">
+                <!-- 좌측: 담당자 공식 명함 안내 -->
+                <div class="reserve-left-info">
+                    <div class="official-card-showcase">
+                        <div class="ocs-top-bar">
+                            <span class="ocs-badge">👑 분양총괄 공식 명함</span>
+                            <span class="ocs-sub">100% 담당자 지정 예약제</span>
+                        </div>
+                        <div class="ocs-img-frame" onclick="openImageModal('assets/card-jang.jpg', '오산 헤리티지 자이 분양총괄 장영희 팀장 공식 명함')">
+                            <img src="assets/card-jang.jpg" alt="오산 헤리티지 자이 장영희 팀장 공식 명함" class="ocs-card-img">
+                        </div>
+                        <p class="ocs-caution-txt">※ 오산 헤리티지 자이 견본주택은 <strong>담당자 사전예약제</strong>로 운영되오니, 방문 전 사전예약 신청 또는 전화 문의 바랍니다.</p>
+                        <div class="ocs-btn-group">
+                            <a href="tel:01033230322" class="ocs-btn call set-phone-link">
+                                <span>📞</span> 010-3323-0322 직통전화
+                            </a>
+                            <a href="sms:01033230322?body=오산 헤리티지 자이 모델하우스 주소 및 사전방문예약 문의드립니다." class="ocs-btn sms" id="reserveSmsBtn">
+                                <span>💬</span> 모델하우스 오시는길 문자받기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 우측: 고객 방문예약 신청 폼 -->
+                <div class="reserve-right-form">
+                    <form id="mainLeadForm" class="vip-modern-form" onsubmit="handleReservationSubmit(event)">
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label for="leadName">성함 <span class="req">*</span></label>
+                                <input type="text" id="leadName" name="name" placeholder="고객님의 성함을 입력해주세요" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="leadPhone">휴대전화번호 <span class="req">*</span></label>
+                                <input type="tel" id="leadPhone" name="phone" placeholder="010-XXXX-XXXX (-없이 입력)" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label for="leadDate">방문 희망일자</label>
+                                <input type="date" id="leadDate" name="reserve_date">
+                            </div>
+
+                            <div class="form-field">
+                                <label for="leadType">관심 평형</label>
+                                <select id="leadType" name="unit_type">
+                                    <option value="전체 / 상담 후 결정">전체 / 상담 후 결정</option>
+                                    <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
+                                    <option value="84㎡ A (구 34평형) - 인기" selected>84㎡ A (구 34평형) - 인기</option>
+                                    <option value="84㎡ B (구 34평형)">84㎡ B (구 34평형)</option>
+                                    <option value="84㎡ C (구 34평형)">84㎡ C (구 34평형)</option>
+                                    <option value="84㎡ D (1BL 88세대)">84㎡ D (1BL 88세대)</option>
+                                    <option value="102㎡ (구 40평형)">102㎡ (구 40평형)</option>
+                                    <option value="124㎡ (구 47평형)">124㎡ (구 47평형)</option>
+                                    <option value="166㎡ PH (펜트하우스)">166㎡ PH (펜트하우스)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="leadNotes">문의 및 요청사항 (선택)</label>
+                            <input type="text" id="leadNotes" name="notes" placeholder="궁금하신 점이나 희망 방문 시간을 남겨주세요">
+                        </div>
+
+                        <button type="submit" class="btn-submit-vip">
+                            <span>사전 방문예약 및 로열층 상담신청</span>
+                            <span>➔</span>
+                        </button>
+
+                        <p class="form-safe-guard">
+                            🔒 고객님의 소중한 개인정보는 담당자(<span class="set-name">장영희</span>)의 상담 및 모델하우스 예약 외에는 일체 사용되지 않습니다.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+       [6. 하단 푸터 (Footer)]
+       ========================================================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <h3 class="footer-brand-title">오산 헤리티지 자이 공식 분양홍보관</h3>
+            <p class="footer-hotline">분양 총괄 담당: <strong class="set-name">장영희</strong> 팀장 (직통: <strong>010-3323-0322</strong>)</p>
+            <p class="footer-legal">
+                본 웹사이트에 사용된 CG 및 조감도, 일러스트, 평면도는 소비자의 이해를 돕기 위한 것으로 실제와 차이가 있을 수 있습니다.<br>
+                자세한 사항은 모델하우스 사전 방문예약 후 전문 상담사를 통해 정확한 안내를 받으시기 바랍니다.
+            </p>
+            <p style="font-size: 11px; opacity: 0.7;">Copyright &copy; OSAN HERITAGE Xi. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+       [7. 모바일 전용 하단 고정 액션바 (Bottom Bar)]
+       ========================================================================== -->
+    <div class="mobile-fixed-bottom-bar">
+        <div class="mob-bottom-container">
+            <a href="tel:01033230322" class="mob-bottom-btn call set-phone-link">
+                📞 010-3323-0322 직통전화
+            </a>
+            <a href="#reserve" onclick="scrollToSection(event, 'reserve')" class="mob-bottom-btn reserve">
+                📋 방문예약 신청
+            </a>
         </div>
     </div>
 
     <!-- ==========================================================================
-       [기존 웹사이트 탭 메뉴 및 상세 콘텐츠 영역 (사업개요, 단지안내 등)]
+       [8. 고화질 이미지 / 평면도 확대 팝업 모달]
        ========================================================================== -->
-
-    <div class="tab-menu" id="tabMenuSection">
-        <button class="tab-btn active" onclick="openTab(event, 'tab1')">사업개요</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab2')">단지&세대안내</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab3')">시장환경</button>
-        <button class="tab-btn" onclick="openTab(event, 'tab4')">프리미엄</button>
-    </div>
-
-    <!-- 탭 1: 사업개요 -->
-    <div id="tab1" class="tab-content active">
-        <img src="img/102.jpg"><img src="img/1.jpg"><img src="img/2.jpg"><img src="img/3.jpg"><img src="img/4.jpg"><img src="img/5.jpg">
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName1" class="res-input" placeholder="이름">
-                <input type="tel" id="mPhone1" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName1', 'mPhone1')">상담 예약 신청</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 탭 2: 단지&세대안내 -->
-    <div id="tab2" class="tab-content">
-        <div class="view-mode-selector">
-            <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
-            <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
-            <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
-        </div>
-        
-        <!-- 동호수표 -->
-        <div id="num-view" class="mode-content active">
-            <div class="type-group active">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'num1', 'num-view')">1BL</button>
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'num2', 'num-view')">2BL</button>
-                </div>
-            </div>
-            <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
-            <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
-        </div>
-        
-        <!-- 1BL 뷰 -->
-        <div id="1BL-view" class="mode-content">
-            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-            <div class="size-filter">
-                <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
-                <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
-                <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
-                <button class="filter-btn" onclick="filterSize(event, 'clubcloud')">CLUB CLOUD</button>
-            </div>
-
-            <!-- 1BL - 75 -->
-            <div id="size75" class="type-group active">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">75㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 1BL - 84A~D -->
-            <div id="size84ABCD" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡A~D 보기</button>
-                </div>
-            </div>
-            <!-- 1BL - 102 -->
-            <div id="size102" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">102㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 1BL - 104 -->
-            <div id="size104" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">104㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 1BL - 166PH -->
-            <div id="size166" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">166㎡ PH 보기</button>
-                </div>
-            </div>
-            <!-- 1BL - CLUB XIAN -->
-            <div id="clubxian" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">CLUB XIAN 보기</button>
-                </div>
-            </div>
-            <div id="clubcloud" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, 'typecloud', '1BL-view')">CLUB CLOUD 보기</button>
-                </div>
-            </div>
-
-            <!-- 1BL 컨텐츠 이미지들 -->
-            <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
-            <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
-            <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
-            <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
-            <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
-            <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
-            <div id="typecloud" class="sub-tab-content"><img src="img/39.jpg"></div>
-        </div>
-        
-        <!-- 2BL 뷰 -->
-        <div id="2BL-view" class="mode-content">
-            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-            <div class="size-filter">
-                <button class="filter-btn active" onclick="filterSize(event, '2size75')">75</button>
-                <button class="filter-btn" onclick="filterSize(event, '2size84ABCD')">84A~C</button>
-                <button class="filter-btn" onclick="filterSize(event, '2size102')">102</button>
-                <button class="filter-btn" onclick="filterSize(event, '2size104')">104</button>
-                <button class="filter-btn" onclick="filterSize(event, '2size166')">166PH</button>
-                <button class="filter-btn" onclick="filterSize(event, '2clubxian')">CLUB XIAN</button>
-                <button class="filter-btn" onclick="filterSize(event, '2clubcloud')">CLUB CLOUD</button>
-            </div>
-
-            <!-- 2BL - 75 -->
-            <div id="2size75" class="type-group active">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn active" onclick="openSubTab(event, '2type75', '2BL-view')">75㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 2BL - 84A~C -->
-            <div id="2size84ABCD" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2type84ABCD', '2BL-view')">84㎡A~C 보기</button>
-                </div>
-            </div>
-            <!-- 2BL - 102 -->
-            <div id="2size102" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2type102', '2BL-view')">102㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 2BL - 104 -->
-            <div id="2size104" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2type104', '2BL-view')">104㎡ 보기</button>
-                </div>
-            </div>
-            <!-- 2BL - 166PH -->
-            <div id="2size166" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2type166', '2BL-view')">166㎡ PH 보기</button>
-                </div>
-            </div>
-            <!-- 2BL - CLUB XIAN -->
-            <div id="2clubxian" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2typeclub', '2BL-view')">CLUB XIAN 보기</button>
-                </div>
-            </div>
-            <div id="2clubcloud" class="type-group">
-                <div class="sub-tab-menu">
-                    <button class="sub-tab-btn" onclick="openSubTab(event, '2typeclubcloud', '2BL-view')">CLUB CLOUD 보기</button>
-                </div>
-            </div>
-            
-            <!-- 2BL 컨텐츠 이미지들 -->
-            <div id="2type75" class="sub-tab-content active"><img src="img/30.jpg"></div>
-            <div id="2type84ABCD" class="sub-tab-content"><img src="img/31.jpg"><img src="img/32.jpg"><img src="img/33.jpg"></div>
-            <div id="2type102" class="sub-tab-content"><img src="img/34.jpg"></div>
-            <div id="2type104" class="sub-tab-content"><img src="img/35.jpg"></div>
-            <div id="2type166" class="sub-tab-content"><img src="img/36.jpg"></div>
-            <div id="2typeclub" class="sub-tab-content"><img src="img/38.jpg"></div>
-            <div id="2typeclubcloud" class="sub-tab-content"><img src="img/39.jpg"></div>
-        </div>
-
-        <!-- 모바일 예약 카드 -->
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- 탭 3: 시장환경 -->
-    <div id="tab3" class="tab-content">
-        <img src="img/9.jpg"><img src="img/10.jpg">
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 탭 4: 프리미엄 -->
-    <div id="tab4" class="tab-content">
-        <img src="img/100.jpg"><img src="img/101.jpg"><img src="img/12.jpg"><img src="img/13.jpg"><img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg"><img src="img/17.jpg"><img src="img/18.jpg"><img src="img/21.jpg">
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName5" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone5" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName5', 'mPhone5')">상담 예약 신청</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 명함 고화질 확대 팝업 모달 -->
     <div class="modal-backdrop" id="imageModal" onclick="closeImageModalOnBackdrop(event)">
         <div class="modal-window">
             <div class="modal-top-bar">
-                <h3 class="modal-headline" id="modalTitle">오산 헤리티지 자이 공식 명함</h3>
+                <h3 class="modal-headline" id="modalTitle">오산 헤리티지 자이</h3>
                 <button type="button" class="modal-close-x" onclick="closeImageModal()">×</button>
             </div>
             <div class="modal-scroll-body">
-                <img src="assets/card-jang.jpg" alt="명함 확대보기" class="modal-expanded-img" id="modalImg">
+                <img src="" alt="확대보기" class="modal-expanded-img" id="modalImg">
             </div>
             <div class="modal-footer-action">
-                <a href="tel:01033230322" class="m-call-btn set-phone-link">📞 직통 전화 상담 연결</a>
+                <a href="tel:01033230322" class="m-call-btn set-phone-link">📞 직통 전화 상담 (010-3323-0322)</a>
                 <button type="button" class="m-close-btn" onclick="closeImageModal()">닫기</button>
             </div>
         </div>
     </div>
-    
+
+    <!-- ==========================================================================
+       [9. 인터랙션 스크립트]
+       ========================================================================== -->
     <script>
+        // 최신 평면도 데이터 정의
+        const UNIT_DATA = {
+            '75': {
+                badge: '75㎡ 콤팩트 실속형 로열 평형 (총 91세대)',
+                title: '75㎡ Type <span class="unit-type-tag">4Bay 맞통풍 판상형</span>',
+                selectVal: '75㎡ (구 30평형)',
+                img: 'assets/75.jpg'
+            },
+            '84a': {
+                badge: '84㎡ A 대표 프리미엄 로열 평형 (최다 세대 509세대)',
+                title: '84㎡ A Type <span class="unit-type-tag">4Bay 맞통풍 판상형</span>',
+                selectVal: '84㎡ A (구 34평형) - 인기',
+                img: 'assets/84A.jpg'
+            },
+            '84b': {
+                badge: '84㎡ B 쾌적한 2면 개방형 와이드 뷰 (총 436세대)',
+                title: '84㎡ B Type <span class="unit-type-tag">2면 개방 타워형</span>',
+                selectVal: '84㎡ B (구 34평형)',
+                img: 'assets/84B.jpg'
+            },
+            '84c': {
+                badge: '84㎡ C 맞통풍 및 독립 공간 특화 (총 446세대)',
+                title: '84㎡ C Type <span class="unit-type-tag">4Bay 맞통풍 판상형</span>',
+                selectVal: '84㎡ C (구 34평형)',
+                img: 'assets/84C.jpg'
+            },
+            '84d': {
+                badge: '84㎡ D 희소성 높은 1BL 단독 특화 (88세대)',
+                title: '84㎡ D Type <span class="unit-type-tag">1BL 단독 평면</span>',
+                selectVal: '84㎡ D (1BL 88세대)',
+                img: 'assets/84D.jpg'
+            },
+            '102': {
+                badge: '102㎡ 대형 하이엔드 광폭 공간 (총 140세대)',
+                title: '102㎡ Type <span class="unit-type-tag">대형 하이엔드 판상형</span>',
+                selectVal: '102㎡ (구 40평형)',
+                img: 'assets/102.jpg'
+            },
+            '124': {
+                badge: '124㎡ 럭셔리 프리미엄 대형 와이드 (총 68세대)',
+                title: '124㎡ Type <span class="unit-type-tag">럭셔리 대형 와이드</span>',
+                selectVal: '124㎡ (구 47평형)',
+                img: 'assets/124.jpg'
+            },
+            '166ph': {
+                badge: '166㎡ PH 최상층 파노라마 펜트하우스 (극소수 5세대 한정)',
+                title: '166㎡ PH Type <span class="unit-type-tag">최상층 하이엔드 펜트하우스</span>',
+                selectVal: '166㎡ PH (펜트하우스)',
+                img: 'assets/166.jpg'
+            }
+        };
+
+        let currentUnitKey = '84a';
+
         window.addEventListener('DOMContentLoaded', function() {
-            // 1. 초기 데이터 매핑 및 타이틀 세팅
+            // 1. 담당자 정보 매핑
             const name = TEAM_LEADER_NAME;
             const phone = TEAM_LEADER_PHONE;
             const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
         
             document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
-            document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
             document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
             
-            const smsBtn = document.getElementById('topSmsBtn');
-            if (smsBtn) {
-                smsBtn.href = `sms:${phone}?body=${encodeURIComponent("오산 헤리티지 자이 분양 상담 및 잔여세대 문의드립니다.")}`;
-            }
-
-            document.title = "오산 헤리티지 자이 - " + name + " 팀장 공식 분양관";
-        
-            // 2. 스크롤 제어
-            window.addEventListener('scroll', function() {
-                let s = window.pageYOffset || document.documentElement.scrollTop;
-                document.querySelectorAll('.size-filter, .type-group.active').forEach(el => {
-                    if (s > 700) el.classList.add('scrolled');
-                    else el.classList.remove('scrolled');
-                });
-            });
+            const topSms = document.getElementById('topSmsBtn');
+            if (topSms) topSms.href = `sms:${phone}?body=${encodeURIComponent("오산 헤리티지 자이 분양 상담 및 잔여세대 문의드립니다.")}`;
+            
+            const resSms = document.getElementById('reserveSmsBtn');
+            if (resSms) resSms.href = `sms:${phone}?body=${encodeURIComponent("오산 헤리티지 자이 모델하우스 주소 및 사전방문예약 문의드립니다.")}`;
         });
 
-        // 상단 네비게이션 모바일 드로어 제어
+        // 상단 메뉴 클릭 시 부드러운 스크롤 이동
+        function scrollToSection(e, sectionId) {
+            if (e) e.preventDefault();
+            const target = document.getElementById(sectionId);
+            if (target) {
+                const navbarHeight = 56;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // 모바일 드로어 토글
         function toggleMobileMenu() {
             const drawer = document.getElementById('mobileNavDrawer');
             if (drawer) drawer.classList.toggle('active');
@@ -784,31 +633,58 @@
             if (drawer) drawer.classList.remove('active');
         }
 
-        // 상단 메뉴에서 탭 선택 후 부드럽게 스크롤 이동
-        function selectTabAndScroll(tabId) {
-            const tabBtn = document.querySelector(`button[onclick*="'${tabId}'"]`);
-            if (tabBtn) tabBtn.click();
-            const target = document.getElementById('tabMenuSection');
-            if (target) {
-                const yOffset = -58;
-                const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({top: y, behavior: 'smooth'});
+        // 단지안내 서브 탭 전환
+        function switchComplexTab(e, paneId) {
+            document.querySelectorAll('.comp-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.comp-tab-pane').forEach(pane => pane.classList.remove('active'));
+            
+            e.currentTarget.classList.add('active');
+            const targetPane = document.getElementById(paneId);
+            if (targetPane) targetPane.classList.add('active');
+        }
+
+        // 평면도 탭 클릭 시 평면도 교체
+        function onUnitTabClick(key) {
+            currentUnitKey = key;
+            document.querySelectorAll('.unit-tab-btn').forEach(btn => {
+                if (btn.dataset.unit === key) btn.classList.add('active');
+                else btn.classList.remove('active');
+            });
+
+            const data = UNIT_DATA[key];
+            if (!data) return;
+
+            const badgeEl = document.getElementById('unitBadge');
+            const titleEl = document.getElementById('unitTitle');
+            const imgEl = document.getElementById('unitImage');
+
+            if (badgeEl) badgeEl.textContent = data.badge;
+            if (titleEl) titleEl.innerHTML = data.title;
+            if (imgEl) {
+                imgEl.src = data.img;
+                imgEl.alt = `오산 헤리티지 자이 ${key} 평면도`;
             }
         }
 
-        // 사전 방문예약 폼으로 부드럽게 이동
-        function scrollToReservation() {
-            const res = document.getElementById('reserveSection');
-            if (res) {
-                const yOffset = -60;
-                const y = res.getBoundingClientRect().top + window.pageYOffset + yOffset;
-                window.scrollTo({top: y, behavior: 'smooth'});
-                const nameInput = document.getElementById('pcName');
-                if (nameInput) nameInput.focus();
+        // 현재 평면도 모달 확대
+        function openCurrentUnitModal() {
+            const data = UNIT_DATA[currentUnitKey];
+            if (data) {
+                openImageModal(data.img, `오산 헤리티지 자이 ${data.badge}`);
             }
         }
 
-        // 명함 이미지 확대 팝업 모달
+        // 해당 평면도를 예약 폼의 셀렉트박스에 자동 선택하고 폼으로 이동
+        function selectCurrentUnitInForm() {
+            const data = UNIT_DATA[currentUnitKey];
+            const selectEl = document.getElementById('leadType');
+            if (data && selectEl) {
+                selectEl.value = data.selectVal;
+            }
+            scrollToSection(null, 'reserve');
+        }
+
+        // 고화질 이미지 모달
         function openImageModal(imgSrc, title) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImg');
@@ -829,96 +705,33 @@
             }
         }
 
-        // 문자 전송 예약 로직
-        function sendReservation(nameId, phoneId) {
-            const nameEl = document.getElementById(nameId);
-            const phoneEl = document.getElementById(phoneId);
-            const name = nameEl ? nameEl.value.trim() : '';
-            let rawPhone = phoneEl ? phoneEl.value.trim() : '';
-            let phone = rawPhone.replace(/[^0-9]/g, "");
-        
+        // 예약 신청 문자 전송 핸들러
+        function handleReservationSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('leadName').value.trim();
+            const phone = document.getElementById('leadPhone').value.trim();
+            const date = document.getElementById('leadDate').value;
+            const unit = document.getElementById('leadType').value;
+            const notes = document.getElementById('leadNotes').value.trim();
+
             if (!name || !phone) {
-                alert("성함과 연락처를 모두 입력해주세요.");
+                alert("성함과 연락처를 입력해 주세요.");
                 return;
             }
-        
-            let formattedPhone = "";
-            if (phone.length === 11) {
-                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-            } else if (phone.length === 10) {
-                formattedPhone = phone.replace(/(010|011|016|017|018|019)(\d{3})(\d{4})/, '$1-$2-$3');
-            } else {
-                formattedPhone = phone; 
-            }
-        
-            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 오산 헤리티지 자이 방문예약 및 상담 신청합니다.`;
+
+            let msg = `[오산 헤리티지 자이 방문예약]\n- 고객명: ${name}\n- 연락처: ${phone}\n- 관심평형: ${unit}`;
+            if (date) msg += `\n- 방문희망일: ${date}`;
+            if (notes) msg += `\n- 요청사항: ${notes}`;
+
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
-            
-            const smsLink = `sms:${TEAM_LEADER_PHONE}${isIOS ? '&' : '?'}body=${encodeURIComponent(message)}`;        
+            const smsLink = `sms:${TEAM_LEADER_PHONE}${isIOS ? '&' : '?'}body=${encodeURIComponent(msg)}`;
+
             if (isIOS || isAndroid) {
                 window.location.href = smsLink;
             } else {
-                const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-                alert(`PC 브라우저에서는 문자 자동 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 안내]\n담당자: ${TEAM_LEADER_NAME} 팀장 (${formatted})\n\n위 연락처로 연락 주시면 신속히 안내해 드리겠습니다! ✨`);
+                alert(`방문예약 신청이 접수되었습니다!\n\n담당자: ${TEAM_LEADER_NAME} 팀장 (010-3323-0322)\n빠른 시일 내에 연락드리겠습니다.`);
             }
-        }
-
-        // 탭 변경 제어
-        function openTab(e, t) {
-            document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
-            document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
-            document.getElementById(t).classList.add("active");
-            e.currentTarget.classList.add("active");
-            
-            if(t === 'tab2') changeViewMode(null, 'num-view');
-        }
-
-        // 단지 안내 / 평면도 안내 뷰 전환
-        function changeViewMode(e, m) {
-            document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
-            document.getElementById(m).classList.add('active');
-            if(e) {
-                e.currentTarget.classList.add('active');
-            } else {
-                const firstBtn = document.querySelector('.mode-btn');
-                if (firstBtn) firstBtn.classList.add('active');
-            }
-            
-            if(m === 'num-view') {
-                const subBtn = document.querySelector('#num-view .sub-tab-btn');
-                if (subBtn) subBtn.click();
-            } else {
-                const filterBtn = document.querySelector('.filter-btn');
-                if (filterBtn) filterBtn.click();
-            }
-        }
-
-        // 평면도 평형 필터링
-        function filterSize(e, s) {
-            const parentMode = e.currentTarget.closest('.mode-content');
-            if (!parentMode) return;
-            
-            parentMode.querySelectorAll('.type-group, .filter-btn').forEach(x => x.classList.remove('active'));
-            
-            const targetGroup = document.getElementById(s);
-            if (targetGroup) {
-                targetGroup.classList.add('active');
-                e.currentTarget.classList.add('active');
-                
-                const subBtn = targetGroup.querySelector('.sub-tab-btn');
-                if (subBtn) subBtn.click();
-            }
-        }
-
-        // 서브 탭 제어
-        function openSubTab(e, s, p) {
-            const parent = document.getElementById(p);
-            if (!parent) return;
-            parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
-            const target = document.getElementById(s);
-            if (target) target.classList.add("active");
-            e.currentTarget.classList.add("active");
         }
     </script>
 </body>
