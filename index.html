@@ -500,18 +500,17 @@
             <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만)">
             <input type="date" id="pcDate" class="res-input">
             <select id="pcTime" class="res-input">
-                <option value="">방문 희망 시간 (선택)</option>
-                <option value="10:00">10:00</option>
-                <option value="11:00">11:00</option>
-                <option value="12:00">12:00</option>
-                <option value="13:00">13:00</option>
-                <option value="14:00">14:00</option>
-                <option value="15:00">15:00</option>
-                <option value="16:00">16:00</option>
-                <option value="17:00">17:00</option>
-                <option value="18:00">18:00</option>
+                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
             </select>
-            <select id="pcType" class="res-input">
+            <!-- <select id="pcType" class="res-input">
                 <option value="">관심 평형 선택 (선택)</option>
                 <option value="75㎡ (구 30평형)">75㎡ (구 30평형)</option>
                 <option value="84㎡ (구 34평형)">84㎡ (구 34평형)</option>
@@ -519,7 +518,7 @@
                 <option value="104㎡ (구 41평형)">104㎡ (구 41평형)</option>
                 <option value="166㎡ PH (구 65평형)">166㎡ PH (구 65평형)</option>
             </select>
-            <textarea id="pcMemo" class="res-input" placeholder="문의 및 요청사항 (선택)"></textarea>
+            <textarea id="pcMemo" class="res-input" placeholder="문의 및 요청사항 (선택)"></textarea> -->
             <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone', 'pcDate', 'pcTime', 'pcType', 'pcMemo')">✉️ 방문 예약 신청</button>
         </div>
     </div>
@@ -585,18 +584,17 @@
                             <label>방문 희망 시간</label>
                             <select id="mTime1">
                                 <option value="">시간을 선택해주세요 (선택)</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
                             </select>
                         </div>
-                        <div class="form-field">
+                        <!-- <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType1">
                                 <option value="">평형을 선택해주세요 (선택)</option>
@@ -610,7 +608,7 @@
                         <div class="form-field">
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo1" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
-                        </div>
+                        </div> -->
                         <button type="button" class="btn-submit-vip" onclick="sendReservation('mName1', 'mPhone1', 'mDate1', 'mTime1', 'mType1', 'mMemo1')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
@@ -625,7 +623,7 @@
             <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
             <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
             <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
-        </div>
+    
         
         <div id="num-view" class="mode-content active">
             <div class="type-group active">
@@ -724,7 +722,7 @@
             <div id="2typeclubcloud" class="sub-tab-content"><img src="img/39.jpg"></div>
         </div>
 
-        <div class="reservation-card mobile-res-only">
+        <!-- <div class="reservation-card mobile-res-only"> 
             <div class="reserve-form-card">
                 <div class="reserve-left-info">
                     <div class="official-card-showcase">
@@ -759,18 +757,17 @@
                             <label>방문 희망 시간</label>
                             <select id="mTime3">
                                 <option value="">시간을 선택해주세요 (선택)</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
                             </select>
                         </div>
-                        <div class="form-field">
+                        <!-- <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType3">
                                 <option value="">평형을 선택해주세요 (선택)</option>
@@ -791,12 +788,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <!-- 탭 3 -->
     <div id="tab3" class="tab-content">
         <img src="img/9.jpg"><img src="img/10.jpg">
-        <div class="reservation-card mobile-res-only">
+      <!--  <div class="reservation-card mobile-res-only">
             <div class="reserve-form-card">
                 <div class="reserve-left-info">
                     <div class="official-card-showcase">
@@ -809,9 +806,9 @@
                             <strong>※ 원활한 관람을 위해</strong><br>
                             방문 전 일시를 예약해주시면 대기 없이 우선 상담이 가능합니다.
                         </p>
-                    </div>
+                    </div> 
                 </div>
-                <div class="reserve-right-form">
+                 <div class="reserve-right-form">
                     <div class="vip-modern-form">
                         <div class="form-row-2">
                             <div class="form-field">
@@ -841,7 +838,7 @@
                                 <option value="17:00">17:00</option>
                                 <option value="18:00">18:00</option>
                             </select>
-                        </div>
+                        </div> -->
                         <!-- <div class="form-field">
                             <label>관심 평형</label>
                             <select id="mType2">
@@ -857,13 +854,13 @@
                             <label>문의 및 요청사항</label>
                             <textarea id="mMemo2" placeholder="궁금하신 점이나 요청사항을 적어주세요 (선택)"></textarea>
                         </div> -->
-                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName2', 'mPhone2', 'mDate2', 'mTime2', 'mType2', 'mMemo2')">방문 예약 신청하기</button>
+                        <!-- <button type="button" class="btn-submit-vip" onclick="sendReservation('mName2', 'mPhone2', 'mDate2', 'mTime2', 'mType2', 'mMemo2')">방문 예약 신청하기</button>
                         <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <!-- 탭 4 -->
     <div id="tab4" class="tab-content">
@@ -903,15 +900,14 @@
                             <label>방문 희망 시간</label>
                             <select id="mTime5">
                                 <option value="">시간을 선택해주세요 (선택)</option>
-                                <option value="10:00">10:00</option>
-                                <option value="11:00">11:00</option>
-                                <option value="12:00">12:00</option>
-                                <option value="13:00">13:00</option>
-                                <option value="14:00">14:00</option>
-                                <option value="15:00">15:00</option>
-                                <option value="16:00">16:00</option>
-                                <option value="17:00">17:00</option>
-                                <option value="18:00">18:00</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
                             </select>
                         </div>
                         <!-- <div class="form-field">
