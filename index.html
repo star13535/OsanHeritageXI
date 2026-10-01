@@ -288,7 +288,7 @@
             line-height: 1.5;
         }
 
-        /* [3. 타이틀, 배너 및 탭 메뉴] */
+        /*  [3. 타이틀, 배너 및 탭 메뉴] 
         .main-title { 
             background-color: #fff; 
             padding: 60px 20px; 
@@ -371,7 +371,82 @@
         .filter-btn.active, .sub-tab-btn.active { background: #152f47 !important; color: #fff !important; }
         .type-group { display: none; padding: 18px 10px; text-align: center; }
         #num-view .type-group.active { display: block !important; }
-        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; } */
+
+        /* [3. 타이틀, 배너 및 탭 메뉴] */
+        .main-title { 
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%); 
+            padding: 40px 20px; 
+            position: relative; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            min-height: 160px; 
+            border-bottom: 1px solid #eef0f2;
+        }
+        
+        /* PC 로고 크기 살짝 축소 (기존 120px -> 80px) */
+        .main-title .inner-logo { 
+            display: none; 
+        }
+        
+        .main-title .title-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 메인 제목 (크기 확대 & 고급스러운 프리미엄 그라데이션 텍스트) */
+        .main-title h2 { 
+            font-size: 40px; 
+            font-weight: 900; 
+            letter-spacing: -1.5px; 
+            line-height: 1.2; 
+            word-break: keep-all; 
+            margin: 0;
+            background: linear-gradient(135deg, #152f47 30%, #b28970 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 4px 20px rgba(21, 47, 71, 0.08);
+        }
+
+        /* 부제목 (크기 확대 & 스페이싱 강조) */
+        .main-title p { 
+            font-size: 21px; 
+            color: #475569; 
+            margin: 0; 
+            word-break: keep-all; 
+            font-weight: 600; 
+            letter-spacing: -0.5px;
+            display: inline-block;
+            position: relative;
+            padding: 4px 16px;
+            background: rgba(178, 137, 112, 0.08);
+            border-radius: 30px;
+            border: 1px solid rgba(178, 137, 112, 0.2);
+        }
+
+        @media (min-width: 1024px) {
+            .main-title .inner-logo { 
+                display: block; 
+                position: absolute; 
+                left: 60px; /* 위치 여백 살짝 조절 */
+                top: 50%; 
+                transform: translateY(-50%); 
+                height: 75px; /* 로고 높이 줄임 (기존 120px -> 75px) */
+            }
+            .main-title .inner-logo img { 
+                height: 100%; 
+                width: auto; 
+            }
+        }
+
+        /* 모바일용 폰트 반응형 크기 조절 */
+        @media (max-width: 768px) {
+            .main-title h2 { font-size: 28px; }
+            .main-title p { font-size: 15px; padding: 4px 12px; }
+        }
 
         /* [4. PC 고정 카드 및 반응형 제어] */
         @media (min-width: 1024px) {
