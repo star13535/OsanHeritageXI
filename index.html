@@ -226,25 +226,28 @@
             min-height: 80px;
         }
         
+        /* 날짜 커스텀 선택창 스타일 */
         .form-field input[type="date"] {
             width: 100% !important;
-            min-width: 100% !important;
             box-sizing: border-box !important;
-            display: block !important;
             position: relative;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23152f47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>');
             background-repeat: no-repeat;
             background-position: right 14px center;
             background-size: 18px 18px;
             padding-right: 40px !important;
+            color: #94a3b8; /* 날짜 선택 전 Placeholder 색상 */
         }
 
-        .form-field input[type="date"]::-webkit-calendar-picker-indicator {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            width: 100%; height: 100%;
-            opacity: 0;
-            cursor: pointer;
+        /* 날짜가 선택되었을 때 글자 색상을 어둡게 변경 */
+        .form-field input[type="date"].has-value,
+        #pcResCard input[type="date"].has-value {
+            color: #0f172a !important;
+        }
+
+        /* PC 카드 날짜 커스텀 */
+        #pcResCard input[type="date"] {
+            color: #94a3b8;
         }
 
         .form-field input:focus,
@@ -564,7 +567,7 @@
             <h3>📞 상담/방문 예약하기</h3>
             <input type="text" id="pcName" class="res-input" placeholder="성함">
             <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만)">
-            <input type="date" id="pcDate" class="res-input" placeholder="방문 날짜 선택">
+            <input type="date" id="pcDate" class="res-input" data-placeholder="방문일 설정 (선택)" onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
             <select id="pcTime" class="res-input">
                 <option value="">시간을 선택해주세요 (선택)</option>
                 <option value="10:00~11:00">10:00~11:00</option>
@@ -635,7 +638,7 @@
                         </div>
                         <div class="form-field">
                             <label>방문 희망 일시</label>
-                            <input type="date" id="mDate1">
+                            <input type="date" id="mDate1" data-placeholder="방문일 설정 (선택)" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
                         </div>
                         <div class="form-field">
                             <label>방문 희망 시간</label>
@@ -802,7 +805,7 @@
                         </div>
                         <div class="form-field">
                             <label>방문 희망 일시</label>
-                            <input type="date" id="mDate5">
+                            <input type="date" id="mDate1" data-placeholder="방문일 설정 (선택)" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
                         </div>
                         <div class="form-field">
                             <label>방문 희망 시간</label>
@@ -838,6 +841,27 @@
             document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
             document.title = "오산 헤리티지자이 - " + name + " 팀장";
 
+            document.querySelectorAll('input[type="date"]').forEach(function(input) {
+                if (!input.value) {
+                    input.type = 'text';
+                    input.placeholder = input.getAttribute('data-placeholder') || '방문일 설정 (선택)';
+                }
+                
+                input.addEventListener('focus', function() {
+                    this.type = 'date';
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.type = 'text';
+                        this.placeholder = this.getAttribute('data-placeholder') || '방문일 설정 (선택)';
+                        this.classList.remove('has-value');
+                    } else {
+                        this.classList.add('has-value');
+                    }
+                });
+            });
+            
             // 2. 스크롤 및 고정 카드의 위치 제어 (PC용)
             window.addEventListener('scroll', function() {
                 let s = window.pageYOffset || document.documentElement.scrollTop;
@@ -860,7 +884,7 @@
                 });
             });
         });
-
+        
         // 3. 문자 예약 제출 기능
         function sendReservation(nameId, phoneId, dateId, timeId, typeId, memoId) {
             const name = document.getElementById(nameId)?.value;
