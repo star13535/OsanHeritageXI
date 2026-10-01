@@ -293,7 +293,7 @@
             background: linear-gradient(180deg, #ffffff 0%, #f4f6f9 100%); 
             padding: 50px 20px 40px; 
             position: relative; 
-            display: flex; 
+            display: flex; ㄹ
             align-items: center; 
             justify-content: center; 
             min-height: 160px; 
@@ -525,7 +525,11 @@
                 height: 70px; 
                 filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
             }
-            .main-title .inner-logo img { height: 100%; width: auto; }
+            .main-title .inner-logo img { 
+                height: 100%; 
+                width: auto; 
+                mix-blend-mode: multiply; /* 흰색 배경 제거 속성 추가 */
+            }
             .mobile-res-only { display: none; }
         }
 
