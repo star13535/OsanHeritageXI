@@ -920,7 +920,7 @@
             if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
             if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
 
-            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 오산 헤리티지자이 방문/상담 예약 신청합니다.${extraText}`;
+            const message = `<오산 헤리티지 자이 방문/상담 신청>\n${name}\n${formattedPhone}\n${extraText}`;
             
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
@@ -930,7 +930,7 @@
                 window.location.href = smsLink;
             } else {
                 const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-                alert(`PC 환경에서는 바로 문자 전송이 어려울 수 있습니다.\n\n[상담 예약 신청 내역]\n성함: ${name}\n연락처: ${formattedPhone}${extraText}\n\n${TEAM_LEADER_NAME} 팀장(${formatted})으로 문의주시면 빠르게 안내해 드리겠습니다.`);
+                alert(`PC 환경에서는 문자 전송이 어렵습니다.\n\n[상담 예약 신청 내역]\n성함: ${name}\n연락처: ${formattedPhone}${extraText}\n\n${TEAM_LEADER_NAME} 팀장(${formatted})으로 문의주시면 빠르게 안내해 드리겠습니다.`);
             }
         }
 
