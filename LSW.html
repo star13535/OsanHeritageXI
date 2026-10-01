@@ -2,14 +2,14 @@
 <html lang="ko">
 <head>
     <script>
-        // 전역 변수 선언: 관리할 데이터들을 이곳에 모아둡니다.
+        // 전역 변수 선언
         const TEAM_LEADER_NAME = "이시우";
         const TEAM_LEADER_PHONE = "01039320656";
     </script>
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="오산헤리티지자이 - 이시우 팀장">
-    <meta property="og:description" content="오산,동탄,수원 생활권을 연결하는 병점역의 신거주타운!">
+    <meta property="og:description" content="GTX-C 연장 & 동탄 트램 더블 교통 비전! 병점역 新주거타운의 중심!">
     <meta property="og:image" content="https://star13535.github.io/OsanHeritageXI/img/LSW.JPG">    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -17,11 +17,19 @@
     <title>오산헤리티지자이 - 이시우 팀장</title>
     
     <link rel="icon" href="img/logo.png" type="image/jpg">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* [공통 설정 - THE LIV 브랜드 테마 반영: 프리미엄 다크 네이비 & 브라운 골드 톤] */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* [0. 전역 기본 설정 및 가로 스크롤 방지] */
+        *, *::before, *::after { 
+            box-sizing: border-box; 
+        }
+        html, body { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            overflow-x: hidden; 
+        }
         body { 
             font-family: 'Noto Sans KR', sans-serif; 
             background-color: #faf9f6; 
@@ -31,60 +39,30 @@
         }
         img { width: 100%; height: auto; display: block; vertical-align: middle; }
 
-        /* [1. 인트로 팝업] */
-        /* .intro-popup-container { 
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-            background: rgba(21, 47, 71, 0.7); 
-            backdrop-filter: blur(8px); 
-            z-index: 10000; align-items: center; justify-content: center; padding: 15px;
+        :root {
+            --top-navy: #152f47;
+            --top-gold: #b28970;
+            --top-border-gold: rgba(178, 137, 112, 0.35);
+            --top-border-light: rgba(21, 47, 71, 0.09);
+            --top-radius-md: 14px;
+            --top-radius-lg: 20px;
         }
-        .intro-popup-content { 
-            position: relative; width: 95%; max-width: 420px; 
-            animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; 
-            transform-origin: center center; opacity: 0;
-        }
-        @keyframes fadeInScale {
-            0% { transform: translateY(-30px) scale(0.92); opacity: 0; }
-            100% { transform: translateY(0) scale(1); opacity: 1; }
-        }
-        .intro-popup-content img { 
-            border-radius: 20px; 
-            border: 2px solid #b28970; 
-            box-shadow: 0 25px 50px -12px rgba(21, 47, 71, 0.5); 
-        }
-        .pop-close-x { 
-            position: absolute; top: 15px; right: 15px; width: 34px; height: 34px; 
-            cursor: pointer; z-index: 2; 
-            background: rgba(21, 47, 71, 0.85); 
-            border: 1.5px solid rgba(255, 255, 255, 0.2);
-            border-radius: 50%; color: #fff; 
-            line-height: 31px; font-weight: 500; font-style: normal;
-            font-size: 14px;
-            transition: all 0.2s;
-        }
-        .pop-close-x:hover {
-            background: #b28970;
-            color: #15212f;
-            border-color: #b28970;
-        } */
 
-        /* [2. 명함 & 예약 폼 섹션] */
-        .business-card, .reservation-card { 
+        /* [1. 명함 카드] */
+        .business-card { 
             width: 100%; 
             background: #fff; 
             padding: 40px 20px; 
             border-bottom: 1px solid #eef0f2; 
         }
-        .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
+        .card-container { width: 100%; max-width: 330px; margin: 0 auto; }
         .card-container img { 
             border-radius: 16px; 
             border: 1px solid rgba(178, 137, 112, 0.25); 
             box-shadow: 0 15px 35px -5px rgba(21, 47, 71, 0.08); 
             transition: transform 0.3s;
         }
-        .card-container img:hover {
-            transform: translateY(-4px);
-        }
+        .card-container img:hover { transform: translateY(-4px); }
         .card-btn-call { 
             display: block; 
             margin-top: 20px; 
@@ -104,160 +82,323 @@
             background: linear-gradient(135deg, #b28970, #96715b); 
             border-color: #96715b;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px -4px rgba(178, 137, 112, 0.4);
         }
 
-        .res-container { 
-            border: 1px solid #b28970; 
-            border-radius: 24px; 
-            padding: 30px 24px; 
-            background: linear-gradient(135deg, #112538, #1c3d5c); 
-            box-shadow: 0 20px 40px -10px rgba(21, 47, 71, 0.3); 
-            color: #fff; 
+        /* [2. 방문 상담 예약 폼] */
+        .reservation-card {
+            width: 100%;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
         }
-        .res-container h3 { 
-            font-size: 19px; 
-            color: #b28970; 
-            margin-bottom: 20px; 
-            font-weight: 700; 
-            letter-spacing: -0.5px;
+
+        .reserve-form-card {
+            background: #ffffff;
+            border: 1.5px solid var(--top-border-gold);
+            border-radius: var(--top-radius-lg);
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            box-shadow: 0 15px 45px rgba(21, 47, 71, 0.1);
+            overflow: hidden;
+            text-align: left;
         }
-        .res-input { 
-            width: 100%; 
-            padding: 14px 16px; 
-            margin-bottom: 12px; 
-            border: 1px solid rgba(178, 137, 112, 0.3); 
-            border-radius: 10px; 
-            font-size: 14px; 
-            background: rgba(255, 255, 255, 0.98); 
+
+        .reserve-left-info {
+            background: linear-gradient(180deg, #152f47 0%, #0f2233 100%);
+            border-right: 1px solid var(--top-border-light);
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        .official-card-showcase {
+            width: 100%;
+            max-width: 320px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1.5px solid rgba(255, 213, 79, 0.45);
+            border-radius: var(--top-radius-md);
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
+        }
+
+        .ocs-top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .ocs-badge {
+            font-size: 12px;
+            font-weight: 800;
             color: #152f47;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        .res-input:focus {
-            outline: none;
-            border-color: #b28970;
-            box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.2);
-        }
-        .res-btn { 
-            width: 100%; 
-            padding: 15px; 
-            background: linear-gradient(135deg, #b28970, #96715b); 
-            color: #ffffff; 
-            border: none; 
-            border-radius: 10px; 
-            font-size: 15px; 
-            font-weight: 700; 
-            cursor: pointer; 
-            box-shadow: 0 6px 20px rgba(178, 137, 112, 0.3);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        .res-btn:hover {
-            transform: translateY(-2px); 
-            box-shadow: 0 8px 25px rgba(178, 137, 112, 0.45);
-            filter: brightness(1.05);
+            background: linear-gradient(135deg, #ffd54f, #e5c06e);
+            padding: 4px 12px;
+            border-radius: 20px;
         }
 
-        /* [3. 타이틀 & 배너] */
+        .ocs-sub {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-weight: 600;
+        }
+
+        .ocs-card-img {
+            width: 100%;
+            border-radius: 8px;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .ocs-caution-txt {
+            font-size: 12px;
+            color: #e2e8f0;
+            line-height: 1.55;
+            background: rgba(15, 23, 42, 0.6);
+            padding: 10px 12px;
+            border-radius: 6px;
+            border-left: 3px solid #ffd54f;
+            margin: 0;
+        }
+
+        .ocs-caution-txt strong { color: #ffd54f; }
+
+        .reserve-right-form {
+            padding: 40px 32px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .vip-modern-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .form-row-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .form-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-field label {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--top-navy);
+        }
+
+        .form-field label .req { color: #e11d48; }
+
+        .form-field input,
+        .form-field select,
+        .form-field textarea {
+            width: 100% !important;
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+            padding: 13px 14px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: inherit;
+            color: #0f172a;
+            background: #f8fafc;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-field textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        /* 날짜 커스텀 선택창 스타일 */
+        .form-field input[type="date"] {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            position: relative;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="%23152f47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            background-size: 18px 18px;
+            padding-right: 40px !important;
+            color: #94a3b8; /* 날짜 선택 전 Placeholder 색상 */
+        }
+
+        /* 날짜가 선택되었을 때 글자 색상을 어둡게 변경 */
+        .form-field input[type="date"].has-value,
+        #pcResCard input[type="date"].has-value {
+            color: #0f172a !important;
+        }
+
+        /* PC 카드 날짜 커스텀 */
+        #pcResCard input[type="date"] {
+            color: #94a3b8;
+        }
+
+        .form-field input:focus,
+        .form-field select:focus,
+        .form-field textarea:focus {
+            border-color: var(--top-gold);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.18);
+        }
+
+        .btn-submit-vip {
+            background: linear-gradient(135deg, #152f47, #0f2233);
+            color: #ffd54f !important;
+            border: 1.5px solid var(--top-border-gold);
+            padding: 16px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(21, 47, 71, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 6px;
+            width: 100%;
+        }
+
+        .btn-submit-vip:hover {
+            background: linear-gradient(135deg, #b28970, #96715b);
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        .form-safe-guard {
+            font-size: 12px;
+            color: #64748b;
+            text-align: center;
+            margin: 6px 0 0;
+            line-height: 1.5;
+        }
+
+        /* [3. 타이틀, 배너 및 탭 메뉴] */
         .main-title { 
-            background-color: #fff; 
-            padding: 60px 20px; 
+            background: #ffffff !important; /* 순백색 단색 고정 */
+            padding: 50px 20px 40px; 
             position: relative; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            min-height: 180px; 
-            border-bottom: 1px solid #eef0f2;
-        }
-        .main-title .inner-logo { display: none; }
-        .main-title h2 { 
-            font-size: 32px; 
-            color: #152f47; 
-            font-weight: 700; 
-            letter-spacing: -1.5px; 
-            line-height: 1.25; 
-            word-break: keep-all; 
-        }
-        .main-title p { 
-            font-size: 20px; 
-            color: #5c6b73; 
-            margin-top: 12px; 
-            word-break: keep-all; 
-            font-weight: 400;
+            min-height: 160px; 
+            border-bottom: 1px solid #e2e8f0;
         }
         
+        .main-title .inner-logo { 
+            display: none; 
+        }
+
+        .main-title .title-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* 메인 제목 : 입체 텍스트 그림자 */
+        .main-title h2 { 
+            font-size: 40px !important; 
+            font-weight: 900 !important; 
+            color: #152f47 !important; 
+            letter-spacing: -1.5px !important; 
+            line-height: 1.2 !important; 
+            word-break: keep-all !important; 
+            margin: 0 !important;
+            padding: 0 !important;
+            text-shadow: 0 2px 4px rgba(21, 47, 71, 0.12), 0 8px 24px rgba(21, 47, 71, 0.08) !important;
+        }
+
+        /* 부제목 : 배경 박스 제거 및 깔끔한 텍스트 처리 */
+        .main-title p { 
+            font-size: 18px !important; 
+            color: #475569 !important; 
+            margin: 6px 0 0 0 !important; 
+            padding: 0 !important;
+            word-break: keep-all !important; 
+            font-weight: 600 !important; 
+            letter-spacing: -0.5px !important;
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        /* 띠 배너 */
         .point-banner { 
             background: linear-gradient(135deg, #112538, #152f47); 
             color: #fff; 
-            padding: 20px 10px; 
-            font-size: 22px; 
+            padding: 18px 10px; 
+            font-size: 20px; 
             font-weight: 700; 
-            letter-spacing: -0.5px;
             border-top: 1px solid #b28970; 
             border-bottom: 1px solid #b28970; 
-            box-shadow: inset 0 0 20px rgba(178, 137, 112, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             animation: bannerPulse 3s infinite ease-in-out; 
         }
-        .point-banner a { 
-            color: #b28970; 
-            text-decoration: none; 
-            border-bottom: 1px solid rgba(178, 137, 112, 0.5);
-            padding-bottom: 2px;
-            transition: all 0.2s;
-        }
-        .point-banner a:hover {
-            color: #ffffff;
-            border-color: #ffffff;
-        }
+        .point-banner a { color: #b28970; text-decoration: none; border-bottom: 1px solid rgba(178, 137, 112, 0.5); }
         @keyframes bannerPulse { 
-            0% { background-color: #112538; } 
+            0%, 100% { background-color: #112538; } 
             50% { background-color: #152f47; } 
-            100% { background-color: #112538; } 
         }
 
-        /* [4. 탭 메뉴] */
+        /* 탭 메뉴 */
         .tab-menu { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            background: #fff; 
-            position: sticky; 
-            top: 0; 
-            z-index: 2000; 
-            border-bottom: 2px solid #152f47; 
-            box-shadow: 0 4px 20px rgba(21, 47, 71, 0.05);
+            display: flex !important; 
+            flex-wrap: nowrap !important; 
+            justify-content: center !important; 
+            background: #fff !important; 
+            position: sticky !important; 
+            top: 0 !important; 
+            z-index: 2000 !important; 
+            border-bottom: 2px solid #152f47 !important; 
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
         }
         .tab-btn { 
-            flex: 1; 
-            min-width: 20%; 
-            padding: 18px 5px; 
-            border: none; 
-            background: #fff; 
-            font-size: 15px; 
-            font-weight: 500; 
-            color: #5c6b73; 
-            cursor: pointer; 
-            border-right: 1px solid #eef0f2; 
-            transition: all 0.3s;
+            flex: 1 !important; 
+            min-width: 0 !important; 
+            padding: 18px 5px !important; 
+            border: none !important; 
+            background: #fff !important; 
+            font-size: 16px !important; 
+            font-weight: 600 !important; 
+            color: #5c6b73 !important; 
+            cursor: pointer !important; 
+            border-right: 1px solid #eef0f2 !important; 
+            border-radius: 0 !important;
+            margin: 0 !important;
+            transition: background 0.2s, color 0.2s !important;
         }
-        .tab-btn:hover {
-            color: #152f47;
-            background: #f8fafc;
-        }
-        .tab-btn.active { 
-            background: #152f47; 
-            color: #fff; 
-            font-weight: 700;
-        }
+        .tab-btn:last-child { border-right: none !important; }
+        .tab-btn.active { background: #152f47 !important; color: #fff !important; font-weight: 700 !important; }
 
         .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
         .tab-content.active { display: block !important; }
 
-        /* [5. 탭 콘텐츠 & 복합 필터] */
         .view-mode-selector { 
             display: flex; 
             background: #f1f3f5; 
-            margin: 0; 
             padding: 12px; 
             position: sticky; 
             top: 55px; 
@@ -265,193 +406,188 @@
             border-bottom: 1px solid #e2e6ea; 
         }
         .mode-btn { 
-            flex: 1; 
-            padding: 12px; 
-            border: none; 
-            background: #e2e6ea; 
-            font-weight: 700; 
-            color: #5c6b73; 
-            cursor: pointer; 
-            border-radius: 8px; 
-            margin: 0 5px; 
-            transition: all 0.2s;
+            flex: 1; padding: 12px; border: none; background: #e2e6ea; 
+            font-weight: 700; color: #5c6b73; cursor: pointer; border-radius: 8px; margin: 0 5px; 
         }
-        .mode-btn.active { 
-            background: #152f47; 
-            color: #fff; 
-        }
+        .mode-btn.active { background: #152f47; color: #fff; }
         .mode-content, .sub-tab-content { display: none; }
         .mode-content.active, .sub-tab-content.active { display: block !important; }
-        
-        .size-filter, .type-group.active { 
-            position: sticky; 
-            top: 130px; 
-            z-index: 1000; 
-            background: #fff; 
-            border-bottom: 1px solid #eef0f2; 
-            transition: all 0.3s ease; 
-        }
-        .size-filter.scrolled, .type-group.active.scrolled { 
-            background: transparent !important; 
-            border-bottom: none !important; 
-        }
-        
-        .swipe-hint-text {
-            display: none;
-            font-size: 11px;
-            color: #b28970;
-            margin-top: 15px;
-            margin-bottom: -5px;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            text-align: center;
-        }
 
-        .size-filter { 
-            display: flex; 
-            justify-content: flex-start; 
-            gap: 8px; 
-            padding: 16px 12px 24px 12px; 
-            overflow-x: auto; 
-            scrollbar-width: thin; 
-            scrollbar-color: #b28970 #eef0f2; 
-        }
-
-        @media (max-width: 1023px) {
-            .swipe-hint-text {
-                display: block; 
-                animation: pulseSwipeHint 2s infinite ease-in-out;
-            }
-            .size-filter::-webkit-scrollbar { 
-                display: block !important;
-                height: 3px; 
-            }
-            .size-filter::-webkit-scrollbar-track {
-                background: #eef0f2; 
-                border-radius: 10px;
-            }
-            .size-filter::-webkit-scrollbar-thumb {
-                background: #b28970; 
-                border-radius: 10px;
-            }
-        }
+        .size-filter, .type-group.active { position: sticky; top: 130px; z-index: 1000; background: #fff; border-bottom: 1px solid #eef0f2; }
+        .swipe-hint-text { display: none; font-size: 11px; color: #b28970; margin-top: 15px; text-align: center; font-weight: 700; }
         
-        @keyframes pulseSwipeHint {
-            0%, 100% { opacity: 0.6; transform: scale(0.98); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-
-        .filter-btn, .sub-tab-btn { 
-            flex: 0 0 auto; 
-            min-width: 95px; 
-            padding: 10px 18px; 
-            border: 1px solid #152f47; 
-            background: #fff; 
-            color: #152f47; 
-            border-radius: 30px; 
-            font-weight: 700; 
-            font-size: 13px;
-            cursor: pointer; 
-            transition: all 0.25s;
-        }
-        .filter-btn:hover, .sub-tab-btn:hover {
-            background: #fafafa;
-        }
-        .filter-btn.active, .sub-tab-btn.active { 
-            background: #152f47 !important; 
-            color: #fff !important; 
-            border-color: #152f47;
-            box-shadow: 0 4px 10px rgba(21, 47, 71, 0.2);
-        }
+        .size-filter { display: flex; gap: 8px; padding: 16px 12px 24px; overflow-x: auto; }
+        .filter-btn, .sub-tab-btn { flex: 0 0 auto; min-width: 95px; padding: 10px 18px; border: 1px solid #152f47; background: #fff; color: #152f47; border-radius: 30px; font-weight: 700; font-size: 13px; cursor: pointer; }
+        .filter-btn.active, .sub-tab-btn.active { background: #152f47 !important; color: #fff !important; }
         .type-group { display: none; padding: 18px 10px; text-align: center; }
         #num-view .type-group.active { display: block !important; }
-        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+        .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; } 
 
-        /* [6. PC 레이아웃 고정] */
+        /* [4. PC 고정 카드 및 반응형 제어] */
         @media (min-width: 1024px) {
-            .size-filter {
-                justify-content: center; 
-                padding: 16px 12px;
-            }
-            .size-filter::-webkit-scrollbar {
-                display: none !important; 
-            }
-            .business-card, .reservation-card { 
-                position: fixed; 
-                top: 55%; 
-                width: 320px; 
-                z-index: 1100; 
+            .size-filter { justify-content: center; }
+            
+            .business-card, #pcResCard { 
+                position: fixed !important; 
+                top: 68% !important;
+                transform: translateY(-50%) !important; 
+                width: 310px; 
+                z-index: 2500 !important; 
                 border: 1px solid rgba(178, 137, 112, 0.3); 
                 border-radius: 24px; 
-                background: rgba(255, 255, 255, 0.95); 
+                background: rgba(255, 255, 255, 0.98); 
                 backdrop-filter: blur(10px); 
-                box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
-                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+                box-shadow: 0 20px 50px -10px rgba(21, 47, 71, 0.18); 
+                transition: top 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+                
+                max-height: calc(100vh - 80px);
+                overflow-y: auto;
             }
-            .business-card { left: 40px; transform: translateY(-50%); }
-            .reservation-card { right: 40px; transform: translateY(-50%); }
-            .business-card.scrolled, .reservation-card.scrolled { top: 50% !important; }
             
+            .business-card { left: 30px; }
+            #pcResCard { right: 30px; padding: 0; }
+            
+            .business-card.scrolled, #pcResCard.scrolled { 
+                top: 50% !important; 
+            }
+
+            .business-card::-webkit-scrollbar,
+            #pcResCard::-webkit-scrollbar {
+                width: 4px;
+            }
+            .business-card::-webkit-scrollbar-thumb,
+            #pcResCard::-webkit-scrollbar-thumb {
+                background: var(--top-gold);
+                border-radius: 4px;
+            }
+
+            #pcResCard .res-container {
+                padding: 20px 16px !important;
+                background: #ffffff !important;
+                border-radius: 24px !important;
+            }
+            #pcResCard h3 {
+                color: #152f47 !important;
+                font-size: 17px !important;
+                margin-top: 0 !important;
+                margin-bottom: 12px !important;
+            }
+            #pcResCard .res-input {
+                width: 100% !important;
+                padding: 10px 12px !important;
+                margin-bottom: 8px !important;
+                border: 1.5px solid #cbd5e1 !important;
+                border-radius: 8px !important;
+                font-size: 13.5px !important;
+                font-family: inherit !important;
+                color: #0f172a !important;
+                background: #f8fafc !important;
+                outline: none !important;
+                box-sizing: border-box !important;
+                display: block !important;
+                -webkit-appearance: none;
+                appearance: none;
+            }
+            #pcResCard textarea.res-input {
+                resize: vertical;
+                min-height: 55px;
+            }
+            #pcResCard .res-input:focus {
+                border-color: #b28970 !important;
+                background: #ffffff !important;
+                box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.18) !important;
+            }
+            #pcResCard .res-btn {
+                width: 100% !important;
+                padding: 12px !important;
+                background: linear-gradient(135deg, #152f47, #0f2233) !important;
+                color: #ffd54f !important;
+                border: 1.5px solid rgba(178, 137, 112, 0.35) !important;
+                border-radius: 10px !important;
+                font-size: 15px !important;
+                font-weight: 800 !important;
+                cursor: pointer !important;
+                box-shadow: 0 6px 20px rgba(21, 47, 71, 0.2) !important;
+                transition: transform 0.2s, background 0.2s !important;
+            }
+            #pcResCard .res-btn:hover {
+                background: linear-gradient(135deg, #b28970, #96715b) !important;
+                color: #ffffff !important;
+                transform: translateY(-2px) !important;
+            }
+
             .main-title .inner-logo { 
                 display: block; 
                 position: absolute; 
-                left: 115px; 
+                left: 50px; 
                 top: 50%; 
                 transform: translateY(-50%); 
-                height: 120px; 
-                z-index: 1; 
+                height: 70px; 
+                filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
             }
-            .main-title .inner-logo img { height: 100%; width: auto; object-fit: contain; }
-            .main-title h2 { font-size: 40px; letter-spacing: -2px; }
-            .main-title p { font-size: 18px; margin-top: 15px; }
-            
-            .mobile-res-only { display: none; } 
+            .main-title .inner-logo img { 
+                height: 100%; 
+                width: auto; 
+                mix-blend-mode: multiply; /* 흰색 배경 제거 속성 추가 */
+            }
+            .mobile-res-only { display: none; }
         }
 
-        /* [7. 모바일 레이아웃] */
         @media (max-width: 1023px) {
-            .reservation-card { 
-                position: static; 
-                border: none; 
-                border-top: 8px solid #eef0f2; 
-                padding: 50px 20px; 
-                background: #fcfdfe; 
-            }
-            #resCard { display: none; } 
+            .swipe-hint-text { display: block; }
+            #pcResCard { display: none; }
+            .reserve-form-card { grid-template-columns: 1fr; }
+            .reserve-left-info { border-right: none; border-bottom: 1px solid var(--top-border-light); padding: 30px 20px; }
+            .reserve-right-form { padding: 30px 20px; }
+            .form-row-2 { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .main-title { padding: 35px 15px 30px; }
+            .main-title h2 { font-size: 27px !important; }
+            .main-title p { font-size: 13.5px !important; padding: 6px 14px !important; }
+            .tab-btn { font-size: 14px !important; padding: 14px 2px !important; }
         }
     </style>
 </head>
 <body>
+    <!-- PC 왼쪽 명함 카드 -->
     <div class="business-card" id="pcCard">
         <div class="card-container">
             <img src="img/LSW.JPG" alt="명함">
             <a href="#" class="card-btn-call set-phone-link">
                 📞 <span class="set-name"></span> 팀장 상담 바로 연결
-            </a>     
+            </a>      
         </div>
     </div>
 
-    <div class="reservation-card" id="resCard">
+    <!-- PC 오른쪽 고정 방문 예약 카드 -->
+    <div id="pcResCard">
         <div class="res-container">
-            <h3>📞 전화 상담 예약하기</h3>
-            <input type="text" id="pcName" class="res-input" placeholder="이름">
-            <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만 입력)">
-            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone')">✉️ 상담 예약 신청</button>
+            <h3>📞 상담/방문 예약하기</h3>
+            <input type="text" id="pcName" class="res-input" placeholder="성함">
+            <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만)">
+            <input type="date" id="pcDate" class="res-input" data-placeholder="방문일 설정 (선택)" onfocus="this.type='date'" onblur="if(!this.value) this.type='text'" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
+            <select id="pcTime" class="res-input">
+                <option value="">시간을 선택해주세요 (선택)</option>
+                <option value="10:00~11:00">10:00~11:00</option>
+                <option value="11:00~12:00">11:00~12:00</option>
+                <option value="12:00~13:00">12:00~13:00</option>
+                <option value="13:00~14:00">13:00~14:00</option>
+                <option value="14:00~15:00">14:00~15:00</option>
+                <option value="15:00~16:00">15:00~16:00</option>
+                <option value="16:00~17:00">16:00~17:00</option>
+                <option value="17:00~18:00">17:00~18:00</option>
+            </select>
+            <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone', 'pcDate', 'pcTime', 'pcType', 'pcMemo')">✉️ 방문 예약 신청</button>
         </div>
     </div>
-    
-    <!-- <div class="intro-popup-container" id="introPopup">
-        <div class="intro-popup-content">
-            <i class="pop-close-x" id="popClose">X</i>
-            <img src="img/LSW.JPG" alt="특별 분양 광고">
-        </div>
-    </div> -->
-    
+
     <div class="main-title">
         <div class="inner-logo"><img src="img/logo.png" alt="자이 로고"></div>
         <div class="title-text">
             <h2>오산 헤리티지 자이</h2>
-            <p>오산,동탄,수원 생활권을 연결하는 병점역의 신거주타운!</p>
+            <p>GTX-C 연장 & 동탄 트램 더블 교통 비전! 병점역 新주거타운의 중심!</p>
         </div>
     </div>
     
@@ -469,209 +605,233 @@
         <button class="tab-btn" onclick="openTab(event, 'tab4')">프리미엄</button>
     </div>
 
+    <!-- 탭 1 -->
     <div id="tab1" class="tab-content active">
         <img src="img/102.jpg"><img src="img/1.jpg"><img src="img/2.jpg"><img src="img/3.jpg"><img src="img/4.jpg"><img src="img/5.jpg">
+        
         <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName1" class="res-input" placeholder="이름">
-                <input type="tel" id="mPhone1" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName1', 'mPhone1')">상담 예약 신청</button>
+            <div class="reserve-form-card">
+                <div class="reserve-left-info">
+                    <div class="official-card-showcase">
+                        <div class="ocs-top-bar">
+                            <span class="ocs-badge">공식 분양관</span>
+                            <span class="ocs-sub">방문예약 전용</span>
+                        </div>
+                        <img src="img/LSW.JPG" alt="이시우 팀장" class="ocs-card-img">
+                        <p class="ocs-caution-txt">
+                            <strong>※ 원활한 관람을 위해</strong><br>
+                            방문 전 일시를 예약해주시면 대기 없이 우선 상담이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="reserve-right-form">
+                    <div class="vip-modern-form">
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label>성함 <span class="req">*</span></label>
+                                <input type="text" id="mName1" placeholder="성함을 입력하세요">
+                            </div>
+                            <div class="form-field">
+                                <label>연락처 <span class="req">*</span></label>
+                                <input type="tel" id="mPhone1" placeholder="010-0000-0000">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>방문 희망 일시</label>
+                            <input type="date" id="mDate1" data-placeholder="방문일 설정 (선택)" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
+                        </div>
+                        <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime1">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName1', 'mPhone1', 'mDate1', 'mTime1', 'mType1', 'mMemo1')">방문 예약 신청하기</button>
+                        <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <!-- 탭 2 -->
     <div id="tab2" class="tab-content">
-    <div class="view-mode-selector">
-        <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
-        <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
-        <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
-    </div>
-    
-    <!-- 동호수표 -->
-    <div id="num-view" class="mode-content active">
-        <div class="type-group active">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn active" onclick="openSubTab(event, 'num1', 'num-view')">1BL</button>
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'num2', 'num-view')">2BL</button>
-            </div>
-        </div>
-        <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
-        <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
-    </div>
-    
-    <!-- 1BL 뷰 -->
-    <div id="1BL-view" class="mode-content">
-        <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-        <div class="size-filter">
-            <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
-            <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
-            <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
-            <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
-            <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
-            <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
-            <button class="filter-btn" onclick="filterSize(event, 'clubcloud')">CLUB CLOUD</button>
-        </div>
-
-        <!-- 1BL - 75 -->
-        <div id="size75" class="type-group active">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">75㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 84A~D -->
-        <div id="size84ABCD" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡A~D 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 102 -->
-        <div id="size102" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">102㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 104 -->
-        <div id="size104" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">104㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 166PH -->
-        <div id="size166" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">166㎡ PH 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - CLUB XIAN -->
-        <div id="clubxian" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">CLUB XIAN 보기</button>
-            </div>
-        </div>
-        <div id="clubcloud" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, 'typecloud', '1BL-view')">CLUB CLOUD 보기</button>
-            </div>
-        </div>
-
-        <!-- 1BL 컨텐츠 이미지들 -->
-        <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
-        <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
-        <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
-        <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
-        <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
-        <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
-        <div id="typecloud" class="sub-tab-content"><img src="img/39.jpg"></div>
-    </div>
-    
-    <!-- 2BL 뷰 -->
-    <div id="2BL-view" class="mode-content">
-        <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
-        <div class="size-filter">
-            <button class="filter-btn active" onclick="filterSize(event, '2size75')">75</button>
-            <button class="filter-btn" onclick="filterSize(event, '2size84ABCD')">84A~C</button>
-            <button class="filter-btn" onclick="filterSize(event, '2size102')">102</button>
-            <button class="filter-btn" onclick="filterSize(event, '2size104')">104</button>
-            <button class="filter-btn" onclick="filterSize(event, '2size166')">166PH</button>
-            <button class="filter-btn" onclick="filterSize(event, '2clubxian')">CLUB XIAN</button>
-            <button class="filter-btn" onclick="filterSize(event, '2clubcloud')">CLUB CLOUD</button>
-        </div>
-
-        <!-- 1BL - 75 -->
-        <div id="2size75" class="type-group active">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn active" onclick="openSubTab(event, '2type75', '2BL-view')">75㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 84A~D -->
-        <div id="2size84ABCD" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2type84ABCD', '2BL-view')">84㎡A~C 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 102 -->
-        <div id="2size102" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2type102', '2BL-view')">102㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 104 -->
-        <div id="2size104" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2type104', '2BL-view')">104㎡ 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - 166PH -->
-        <div id="2size166" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2type166', '2BL-view')">166㎡ PH 보기</button>
-            </div>
-        </div>
-        <!-- 1BL - CLUB XIAN -->
-        <div id="2clubxian" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2typeclub', '2BL-view')">CLUB XIAN 보기</button>
-            </div>
-        </div>
-
-        <div id="2clubcloud" class="type-group">
-            <div class="sub-tab-menu">
-                <button class="sub-tab-btn" onclick="openSubTab(event, '2typeclubcloud', '2BL-view')">CLUB CLOUD 보기</button>
-            </div>
+        <div class="view-mode-selector">
+            <button class="mode-btn active" onclick="changeViewMode(event, 'num-view')">동호수표</button>
+            <button class="mode-btn" onclick="changeViewMode(event, '1BL-view')">🏠 1BL</button>
+            <button class="mode-btn" onclick="changeViewMode(event, '2BL-view')">🏠 2BL</button>
         </div>
         
-        <!-- 2BL 컨텐츠 이미지들 -->
-        <div id="2type75" class="sub-tab-content active"><img src="img/30.jpg"></div>
-        <div id="2type84ABCD" class="sub-tab-content"><img src="img/31.jpg"><img src="img/32.jpg"><img src="img/33.jpg"></div>
-        <div id="2type102" class="sub-tab-content"><img src="img/34.jpg"></div>
-        <div id="2type104" class="sub-tab-content"><img src="img/35.jpg"></div>
-        <div id="2type166" class="sub-tab-content"><img src="img/36.jpg"></div>
-        <div id="2typeclub" class="sub-tab-content"><img src="img/38.jpg"></div>
-        <div id="2typeclubcloud" class="sub-tab-content"><img src="img/39.jpg"></div>
+        <div id="num-view" class="mode-content active">
+            <div class="type-group active">
+                <div class="sub-tab-menu">
+                    <button class="sub-tab-btn active" onclick="openSubTab(event, 'num1', 'num-view')">1BL</button>
+                    <button class="sub-tab-btn" onclick="openSubTab(event, 'num2', 'num-view')">2BL</button>
+                </div>
+            </div>
+            <div id="num1" class="sub-tab-content active"><img src="img/6.jpg"></div>
+            <div id="num2" class="sub-tab-content"><img src="img/7.jpg"></div>
+        </div>
+        
+        <div id="1BL-view" class="mode-content">
+            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, 'size75')">75</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size84ABCD')">84A~D</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size102')">102</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size104')">104</button>
+                <button class="filter-btn" onclick="filterSize(event, 'size166')">166PH</button>
+                <button class="filter-btn" onclick="filterSize(event, 'clubxian')">CLUB XIAN</button>
+                <button class="filter-btn" onclick="filterSize(event, 'clubcloud')">CLUB CLOUD</button>
+            </div>
 
-    </div>
+            <div id="size75" class="type-group active">
+                <div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, 'type75', '1BL-view')">75㎡ 보기</button></div>
+            </div>
+            <div id="size84ABCD" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type84ABCD', '1BL-view')">84㎡A~D 보기</button></div>
+            </div>
+            <div id="size102" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type102', '1BL-view')">102㎡ 보기</button></div>
+            </div>
+            <div id="size104" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type104', '1BL-view')">104㎡ 보기</button></div>
+            </div>
+            <div id="size166" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'type166', '1BL-view')">166㎡ PH 보기</button></div>
+            </div>
+            <div id="clubxian" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'typeclub', '1BL-view')">CLUB XIAN 보기</button></div>
+            </div>
+            <div id="clubcloud" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, 'typecloud', '1BL-view')">CLUB CLOUD 보기</button></div>
+            </div>
 
-    <!-- 모바일 예약 카드 -->
-    <div class="reservation-card mobile-res-only">
-        <div class="res-container">
-            <h3>📞 전화 상담 예약하기</h3>
-            <input type="text" id="mName3" class="res-input" placeholder="고객 성함">
-            <input type="tel" id="mPhone3" class="res-input" placeholder="연락처">
-            <button class="res-btn" onclick="sendReservation('mName3', 'mPhone3')">상담 예약 신청</button>
+            <div id="type75" class="sub-tab-content active"><img src="img/22.jpg"></div>
+            <div id="type84ABCD" class="sub-tab-content"><img src="img/23.jpg"><img src="img/24.jpg"><img src="img/25.jpg"><img src="img/26.jpg"></div>
+            <div id="type102" class="sub-tab-content"><img src="img/27.jpg"></div>
+            <div id="type104" class="sub-tab-content"><img src="img/28.jpg"></div>
+            <div id="type166" class="sub-tab-content"><img src="img/29.jpg"></div>
+            <div id="typeclub" class="sub-tab-content"><img src="img/37.jpg"></div>
+            <div id="typecloud" class="sub-tab-content"><img src="img/39.jpg"></div>
+        </div>
+        
+        <div id="2BL-view" class="mode-content">
+            <div class="swipe-hint-text">↔ 좌우로 밀어서 모든 타입을 확인해보세요</div>
+            <div class="size-filter">
+                <button class="filter-btn active" onclick="filterSize(event, '2size75')">75</button>
+                <button class="filter-btn" onclick="filterSize(event, '2size84ABCD')">84A~C</button>
+                <button class="filter-btn" onclick="filterSize(event, '2size102')">102</button>
+                <button class="filter-btn" onclick="filterSize(event, '2size104')">104</button>
+                <button class="filter-btn" onclick="filterSize(event, '2size166')">166PH</button>
+                <button class="filter-btn" onclick="filterSize(event, '2clubxian')">CLUB XIAN</button>
+                <button class="filter-btn" onclick="filterSize(event, '2clubcloud')">CLUB CLOUD</button>
+            </div>
+
+            <div id="2size75" class="type-group active">
+                <div class="sub-tab-menu"><button class="sub-tab-btn active" onclick="openSubTab(event, '2type75', '2BL-view')">75㎡ 보기</button></div>
+            </div>
+            <div id="2size84ABCD" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2type84ABCD', '2BL-view')">84㎡A~C 보기</button></div>
+            </div>
+            <div id="2size102" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2type102', '2BL-view')">102㎡ 보기</button></div>
+            </div>
+            <div id="2size104" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2type104', '2BL-view')">104㎡ 보기</button></div>
+            </div>
+            <div id="2size166" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2type166', '2BL-view')">166㎡ PH 보기</button></div>
+            </div>
+            <div id="2clubxian" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2typeclub', '2BL-view')">CLUB XIAN 보기</button></div>
+            </div>
+            <div id="2clubcloud" class="type-group">
+                <div class="sub-tab-menu"><button class="sub-tab-btn" onclick="openSubTab(event, '2typeclubcloud', '2BL-view')">CLUB CLOUD 보기</button></div>
+            </div>
+            
+            <div id="2type75" class="sub-tab-content active"><img src="img/30.jpg"></div>
+            <div id="2type84ABCD" class="sub-tab-content"><img src="img/31.jpg"><img src="img/32.jpg"><img src="img/33.jpg"></div>
+            <div id="2type102" class="sub-tab-content"><img src="img/34.jpg"></div>
+            <div id="2type104" class="sub-tab-content"><img src="img/35.jpg"></div>
+            <div id="2type166" class="sub-tab-content"><img src="img/36.jpg"></div>
+            <div id="2typeclub" class="sub-tab-content"><img src="img/38.jpg"></div>
+            <div id="2typeclubcloud" class="sub-tab-content"><img src="img/39.jpg"></div>
         </div>
     </div>
-</div>
-    
+
+    <!-- 탭 3 -->
     <div id="tab3" class="tab-content">
         <img src="img/9.jpg"><img src="img/10.jpg">
-        <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName2" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone2" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName2', 'mPhone2')">상담 예약 신청</button>
-            </div>
-        </div>
     </div>
 
-    
-
+    <!-- 탭 4 -->
     <div id="tab4" class="tab-content">
         <img src="img/100.jpg"><img src="img/101.jpg"><img src="img/12.jpg"><img src="img/13.jpg"><img src="img/14.jpg"><img src="img/15.jpg"><img src="img/16.jpg"><img src="img/17.jpg"><img src="img/18.jpg"><img src="img/21.jpg">
         <div class="reservation-card mobile-res-only">
-            <div class="res-container">
-                <h3>📞 전화 상담 예약하기</h3>
-                <input type="text" id="mName5" class="res-input" placeholder="고객 성함">
-                <input type="tel" id="mPhone5" class="res-input" placeholder="연락처">
-                <button class="res-btn" onclick="sendReservation('mName5', 'mPhone5')">상담 예약 신청</button>
+            <div class="reserve-form-card">
+                <div class="reserve-left-info">
+                    <div class="official-card-showcase">
+                        <div class="ocs-top-bar">
+                            <span class="ocs-badge">공식 분양관</span>
+                            <span class="ocs-sub">방문예약 전용</span>
+                        </div>
+                        <img src="img/LSW.JPG" alt="이시우 팀장" class="ocs-card-img">
+                        <p class="ocs-caution-txt">
+                            <strong>※ 원활한 관람을 위해</strong><br>
+                            방문 전 일시를 예약해주시면 대기 없이 우선 상담이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="reserve-right-form">
+                    <div class="vip-modern-form">
+                        <div class="form-row-2">
+                            <div class="form-field">
+                                <label>성함 <span class="req">*</span></label>
+                                <input type="text" id="mName5" placeholder="성함을 입력하세요">
+                            </div>
+                            <div class="form-field">
+                                <label>연락처 <span class="req">*</span></label>
+                                <input type="tel" id="mPhone5" placeholder="010-0000-0000">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>방문 희망 일시</label>
+                            <input type="date" id="mDate1" data-placeholder="방문일 설정 (선택)" onchange="if(this.value) this.classList.add('has-value'); else this.classList.remove('has-value');">
+                        </div>
+                        <div class="form-field">
+                            <label>방문 희망 시간</label>
+                            <select id="mTime5">
+                                <option value="">시간을 선택해주세요 (선택)</option>
+                                <option value="10:00~11:00">10:00~11:00</option>
+                                <option value="11:00~12:00">11:00~12:00</option>
+                                <option value="12:00~13:00">12:00~13:00</option>
+                                <option value="13:00~14:00">13:00~14:00</option>
+                                <option value="14:00~15:00">14:00~15:00</option>
+                                <option value="15:00~16:00">15:00~16:00</option>
+                                <option value="16:00~17:00">16:00~17:00</option>
+                                <option value="17:00~18:00">17:00~18:00</option>
+                            </select>
+                        </div>
+                        <button type="button" class="btn-submit-vip" onclick="sendReservation('mName5', 'mPhone5', 'mDate5', 'mTime5', 'mType5', 'mMemo5')">방문 예약 신청하기</button>
+                        <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            // 1. 초기 데이터 매핑 및 타이틀 세팅
+            // 1. 초기 데이터 세팅
             const name = TEAM_LEADER_NAME;
             const phone = TEAM_LEADER_PHONE;
             const formatted = phone.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
@@ -679,28 +839,42 @@
             document.querySelectorAll('.set-name').forEach(el => el.innerText = name);
             document.querySelectorAll('.set-phone-text').forEach(el => el.innerText = formatted);
             document.querySelectorAll('.set-phone-link').forEach(el => el.href = "tel:" + phone);
-            document.querySelectorAll('.set-name-title').forEach(el => el.innerText = name + " 팀장 상담 예약");
             document.title = "오산 헤리티지자이 - " + name + " 팀장";
 
-            // 2. 인드로 팝업 노출 제어
-            const pop = document.getElementById('introPopup');
-            pop.style.display = 'flex';
-            document.getElementById('popClose').onclick = () => { pop.style.display = 'none'; };
-            pop.onclick = (e) => { if(e.target === pop) pop.style.display = 'none'; };
-        
-            // 3. 스크롤 및 고정 요소 상태 제어
+            document.querySelectorAll('input[type="date"]').forEach(function(input) {
+                if (!input.value) {
+                    input.type = 'text';
+                    input.placeholder = input.getAttribute('data-placeholder') || '방문일 설정 (선택)';
+                }
+                
+                input.addEventListener('focus', function() {
+                    this.type = 'date';
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.type = 'text';
+                        this.placeholder = this.getAttribute('data-placeholder') || '방문일 설정 (선택)';
+                        this.classList.remove('has-value');
+                    } else {
+                        this.classList.add('has-value');
+                    }
+                });
+            });
+            
+            // 2. 스크롤 및 고정 카드의 위치 제어 (PC용)
             window.addEventListener('scroll', function() {
                 let s = window.pageYOffset || document.documentElement.scrollTop;
                 const pcCard = document.getElementById('pcCard');
-                const resCard = document.getElementById('resCard');
+                const pcResCard = document.getElementById('pcResCard');
         
                 if (window.innerWidth >= 1024) {
                     if (s > 100) {
                         pcCard?.classList.add('scrolled');
-                        resCard?.classList.add('scrolled');
+                        pcResCard?.classList.add('scrolled');
                     } else {
                         pcCard?.classList.remove('scrolled');
-                        resCard?.classList.remove('scrolled');
+                        pcResCard?.classList.remove('scrolled');
                     }
                 }
         
@@ -710,12 +884,17 @@
                 });
             });
         });
-
-        // 4. 문자 전송 예약 로직
-        function sendReservation(nameId, phoneId) {
-            const name = document.getElementById(nameId).value;
-            let rawPhone = document.getElementById(phoneId).value;
-            let phone = rawPhone.replace(/[^0-9]/g, "");
+        
+        // 3. 문자 예약 제출 기능
+        function sendReservation(nameId, phoneId, dateId, timeId, typeId, memoId) {
+            const name = document.getElementById(nameId)?.value;
+            let rawPhone = document.getElementById(phoneId)?.value;
+            const dateVal = dateId ? document.getElementById(dateId)?.value : "";
+            const timeVal = timeId ? document.getElementById(timeId)?.value : "";
+            const typeVal = typeId ? document.getElementById(typeId)?.value : "";
+            const memoVal = memoId ? document.getElementById(memoId)?.value : "";
+            
+            let phone = rawPhone ? rawPhone.replace(/[^0-9]/g, "") : "";
         
             if (!name || !phone) {
                 alert("성함과 연락처를 모두 입력해주세요.");
@@ -731,7 +910,14 @@
                 formattedPhone = phone; 
             }
         
-            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 오산 헤리티지자이 전화 상담 신청합니다.`;
+            let extraText = "";
+            if (dateVal) extraText += `\n- 방문 희망일: ${dateVal}`;
+            if (timeVal) extraText += `\n- 방문 희망시간: ${timeVal}`;
+            // if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
+            // if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
+
+            const message = `<오산 헤리티지 자이 방문/상담 신청>\n${name}\n${formattedPhone}${extraText}`;
+            
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
             
@@ -740,11 +926,11 @@
                 window.location.href = smsLink;
             } else {
                 const formatted = TEAM_LEADER_PHONE.replace(/(010|011|016|017|018|019)(\d{3,4})(\d{4})/, '$1-$2-$3');
-                alert(`PC에서는 문자 전송이 지원되지 않을 수 있습니다.\n\n[상담 예약 접수 안내]\n${TEAM_LEADER_NAME} 팀장 번호: ${formatted}\n\n위 번호로 문자를 보내주시면 바로 연락드리겠습니다! ✨`);
+                alert(`PC 환경에서는 문자 전송이 어렵습니다.\n\n[상담 예약 신청 내역]\n성함: ${name}\n연락처: ${formattedPhone}${extraText}\n\n${TEAM_LEADER_NAME} 팀장(${formatted})으로 문의주시면 빠르게 안내해 드리겠습니다.`);
             }
         }
 
-        // 5. 탭 변경 제어
+        // 4. 탭 변경 기능
         function openTab(e, t) {
             document.querySelectorAll(".tab-content").forEach(c => c.classList.remove("active"));
             document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
@@ -755,13 +941,12 @@
             window.scrollTo({top: 0, behavior: 'smooth'});
         }
 
-        // 6. 단지 안내 / 평면도 안내 뷰 전환
+        // 5. 단지/평면도 뷰 전환
         function changeViewMode(e, m) {
             document.querySelectorAll('.mode-content, .mode-btn').forEach(x => x.classList.remove('active'));
             document.getElementById(m).classList.add('active');
             if(e) {
                 e.currentTarget.classList.add('active');
-                // window.scrollTo({top: 0, behavior: 'smooth'});
             } else {
                 document.querySelector('.mode-btn').classList.add('active');
             }
@@ -770,33 +955,26 @@
             else document.querySelector('.filter-btn').click();
         }
 
-       // 7. 평면도 평형 필터링 (수정됨)
+        // 6. 평면도 필터링
         function filterSize(e, s) {
-            // 현재 눌린 버튼이 속한 부모 mode-content(1BL-view 또는 2BL-view)를 찾습니다.
             const parentMode = e.currentTarget.closest('.mode-content');
-            
-            // 해당 부모 안의 type-group과 filter-btn만 active 해제
             parentMode.querySelectorAll('.type-group, .filter-btn').forEach(x => x.classList.remove('active'));
             
-            // 선택한 그룹과 버튼 활성화
             const targetGroup = document.getElementById(s);
             if (targetGroup) {
                 targetGroup.classList.add('active');
                 e.currentTarget.classList.add('active');
-                
-                // 해당 그룹 내부의 첫 번째 서브탭 버튼 자동 클릭
                 const subBtn = targetGroup.querySelector('.sub-tab-btn');
                 if (subBtn) subBtn.click();
             }
         }
 
-        // 8. 서브 탭 제어
+        // 7. 서브 탭 변경
         function openSubTab(e, s, p) {
             const parent = document.getElementById(p);
             parent.querySelectorAll(".sub-tab-content, .sub-tab-btn").forEach(x => x.classList.remove("active"));
             document.getElementById(s).classList.add("active");
             e.currentTarget.classList.add("active");
-            // window.scrollTo({top: 0, behavior: 'smooth'});
         }
     </script>
 </body>
