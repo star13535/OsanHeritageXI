@@ -421,8 +421,10 @@
         }
     </style> -->
 
-    <style>
-    /* [0. 전역 박스 계산 및 우측 여백/가로 스크롤 완전 방지] */
+   <style>
+    /* ==========================================================================
+       [0. 전역 박스 계산 및 모바일 우측 여백/가로 스크롤 완전 방지]
+       ========================================================================== */
     *, *::before, *::after { 
         box-sizing: border-box; 
     }
@@ -441,60 +443,23 @@
     }
     img { width: 100%; height: auto; display: block; vertical-align: middle; }
 
-    /* [1. 인트로 팝업 - 필요시 주석 해제] */
-    /* .intro-popup-container { 
-        display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; 
-        background: rgba(21, 47, 71, 0.7); 
-        backdrop-filter: blur(8px); 
-        z-index: 10000; align-items: center; justify-content: center; padding: 15px;
-    }
-    .intro-popup-content { 
-        position: relative; width: 95%; max-width: 420px; 
-        animation: fadeInScale 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; 
-        transform-origin: center center; opacity: 0;
-    }
-    @keyframes fadeInScale {
-        0% { transform: translateY(-30px) scale(0.92); opacity: 0; }
-        100% { transform: translateY(0) scale(1); opacity: 1; }
-    }
-    .intro-popup-content img { 
-        border-radius: 20px; 
-        border: 2px solid #b28970; 
-        box-shadow: 0 25px 50px -12px rgba(21, 47, 71, 0.5); 
-    }
-    .pop-close-x { 
-        position: absolute; top: 15px; right: 15px; width: 34px; height: 34px; 
-        cursor: pointer; z-index: 2; 
-        background: rgba(21, 47, 71, 0.85); 
-        border: 1.5px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50%; color: #fff; 
-        line-height: 31px; font-weight: 500; font-style: normal;
-        font-size: 14px;
-        transition: all 0.2s;
-    }
-    .pop-close-x:hover {
-        background: #b28970;
-        color: #15212f;
-        border-color: #b28970;
-    } */
-
-    /* [2. 명함 & 방문 예약 폼 섹션] */
-    .business-card, .reservation-card { 
+    /* ==========================================================================
+       [1. 명함 카드 및 기본 스타일]
+       ========================================================================== */
+    .business-card { 
         width: 100%; 
         background: #fff; 
         padding: 40px 20px; 
         border-bottom: 1px solid #eef0f2; 
     }
-    .card-container, .res-container { width: 100%; max-width: 330px; margin: 0 auto; }
+    .card-container { width: 100%; max-width: 330px; margin: 0 auto; }
     .card-container img { 
         border-radius: 16px; 
         border: 1px solid rgba(178, 137, 112, 0.25); 
         box-shadow: 0 15px 35px -5px rgba(21, 47, 71, 0.08); 
         transition: transform 0.3s;
     }
-    .card-container img:hover {
-        transform: translateY(-4px);
-    }
+    .card-container img:hover { transform: translateY(-4px); }
     .card-btn-call { 
         display: block; 
         margin-top: 20px; 
@@ -514,61 +479,166 @@
         background: linear-gradient(135deg, #b28970, #96715b); 
         border-color: #96715b;
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px -4px rgba(178, 137, 112, 0.4);
     }
 
-    .res-container { 
-        border: 1px solid #b28970; 
-        border-radius: 24px; 
-        padding: 30px 24px; 
-        background: linear-gradient(135deg, #112538, #1c3d5c); 
-        box-shadow: 0 20px 40px -10px rgba(21, 47, 71, 0.3); 
-        color: #fff; 
+    /* ==========================================================================
+       [2. 방문 상담 예약 폼 (첫 번째 CSS 럭셔리 스타일 적용)]
+       ========================================================================== */
+    :root {
+        --top-navy: #152f47;
+        --top-gold: #b28970;
+        --top-border-gold: rgba(178, 137, 112, 0.35);
+        --top-border-light: rgba(21, 47, 71, 0.09);
+        --top-radius-md: 14px;
+        --top-radius-lg: 20px;
     }
-    .res-container h3 { 
-        font-size: 19px; 
-        color: #b28970; 
-        margin-bottom: 20px; 
-        font-weight: 700; 
-        letter-spacing: -0.5px;
+
+    .reservation-card {
+        width: 100%;
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0 15px;
+        box-sizing: border-box;
     }
-    .res-input { 
-        width: 100%; 
-        padding: 14px 16px; 
-        margin-bottom: 12px; 
-        border: 1px solid rgba(178, 137, 112, 0.3); 
-        border-radius: 10px; 
-        font-size: 14px; 
-        background: rgba(255, 255, 255, 0.98); 
+
+    .reserve-form-card {
+        background: #ffffff;
+        border: 1.5px solid var(--top-border-gold);
+        border-radius: var(--top-radius-lg);
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        box-shadow: 0 15px 45px rgba(21, 47, 71, 0.1);
+        overflow: hidden;
+        text-align: left;
+    }
+
+    .reserve-left-info {
+        background: linear-gradient(180deg, #152f47 0%, #0f2233 100%);
+        border-right: 1px solid var(--top-border-light);
+        padding: 35px 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+    }
+
+    .official-card-showcase {
+        width: 100%;
+        max-width: 320px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1.5px solid rgba(255, 213, 79, 0.45);
+        border-radius: var(--top-radius-md);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+        backdrop-filter: blur(10px);
+        box-sizing: border-box;
+    }
+
+    .ocs-badge {
+        font-size: 12px;
+        font-weight: 800;
         color: #152f47;
-        font-weight: 500;
-        transition: all 0.3s;
-    }
-    .res-input:focus {
-        outline: none;
-        border-color: #b28970;
-        box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.2);
-    }
-    .res-btn { 
-        width: 100%; 
-        padding: 15px; 
-        background: linear-gradient(135deg, #b28970, #96715b); 
-        color: #ffffff; 
-        border: none; 
-        border-radius: 10px; 
-        font-size: 15px; 
-        font-weight: 700; 
-        cursor: pointer; 
-        box-shadow: 0 6px 20px rgba(178, 137, 112, 0.3);
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-    .res-btn:hover {
-        transform: translateY(-2px); 
-        box-shadow: 0 8px 25px rgba(178, 137, 112, 0.45);
-        filter: brightness(1.05);
+        background: linear-gradient(135deg, #ffd54f, #e5c06e);
+        padding: 4px 12px;
+        border-radius: 20px;
+        display: inline-block;
+        width: fit-content;
     }
 
-    /* [3. 타이틀 & 배너] */
+    .ocs-card-img {
+        width: 100%;
+        border-radius: 8px;
+        border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .reserve-right-form {
+        padding: 35px 28px;
+        background: #ffffff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .vip-modern-form {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .form-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .form-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .form-field label {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: var(--top-navy);
+    }
+
+    .form-field label .req { color: #e11d48; }
+
+    .form-field input {
+        width: 100%;
+        padding: 13px 14px;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #0f172a;
+        background: #f8fafc;
+        outline: none;
+        transition: border-color 0.2s, background 0.2s;
+        box-sizing: border-box;
+    }
+
+    .form-field input:focus {
+        border-color: var(--top-gold);
+        background: #ffffff;
+        box-shadow: 0 0 0 3px rgba(178, 137, 112, 0.18);
+    }
+
+    .btn-submit-vip {
+        background: linear-gradient(135deg, #152f47, #0f2233);
+        color: #ffd54f !important;
+        border: 1.5px solid var(--top-border-gold);
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 15.5px;
+        font-weight: 900;
+        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(21, 47, 71, 0.3);
+        transition: transform 0.2s, box-shadow 0.2s;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .btn-submit-vip:hover {
+        background: linear-gradient(135deg, #b28970, #96715b);
+        color: #ffffff !important;
+        transform: translateY(-2px);
+    }
+
+    .form-safe-guard {
+        font-size: 12px;
+        color: #64748b;
+        text-align: center;
+        margin: 6px 0 0;
+    }
+
+    /* ==========================================================================
+       [3. 타이틀, 배너, 탭 메뉴 및 메인 반응형]
+       ========================================================================== */
     .main-title { 
         background-color: #fff; 
         padding: 60px 20px; 
@@ -580,21 +650,8 @@
         border-bottom: 1px solid #eef0f2;
     }
     .main-title .inner-logo { display: none; }
-    .main-title h2 { 
-        font-size: 32px; 
-        color: #152f47; 
-        font-weight: 700; 
-        letter-spacing: -1.5px; 
-        line-height: 1.25; 
-        word-break: keep-all; 
-    }
-    .main-title p { 
-        font-size: 20px; 
-        color: #5c6b73; 
-        margin-top: 12px; 
-        word-break: keep-all; 
-        font-weight: 400;
-    }
+    .main-title h2 { font-size: 32px; color: #152f47; font-weight: 700; letter-spacing: -1.5px; }
+    .main-title p { font-size: 20px; color: #5c6b73; margin-top: 12px; font-weight: 400; }
     
     .point-banner { 
         background: linear-gradient(135deg, #112538, #152f47); 
@@ -602,30 +659,16 @@
         padding: 20px 10px; 
         font-size: 22px; 
         font-weight: 700; 
-        letter-spacing: -0.5px;
         border-top: 1px solid #b28970; 
         border-bottom: 1px solid #b28970; 
-        box-shadow: inset 0 0 20px rgba(178, 137, 112, 0.15);
         animation: bannerPulse 3s infinite ease-in-out; 
     }
-    .point-banner a { 
-        color: #b28970; 
-        text-decoration: none; 
-        border-bottom: 1px solid rgba(178, 137, 112, 0.5);
-        padding-bottom: 2px;
-        transition: all 0.2s;
-    }
-    .point-banner a:hover {
-        color: #ffffff;
-        border-color: #ffffff;
-    }
+    .point-banner a { color: #b28970; text-decoration: none; border-bottom: 1px solid rgba(178, 137, 112, 0.5); }
     @keyframes bannerPulse { 
-        0% { background-color: #112538; } 
+        0%, 100% { background-color: #112538; } 
         50% { background-color: #152f47; } 
-        100% { background-color: #112538; } 
     }
 
-    /* [4. 탭 메뉴] */
     .tab-menu { 
         display: flex; 
         flex-wrap: wrap; 
@@ -635,7 +678,6 @@
         top: 0; 
         z-index: 2000; 
         border-bottom: 2px solid #152f47; 
-        box-shadow: 0 4px 20px rgba(21, 47, 71, 0.05);
     }
     .tab-btn { 
         flex: 1; 
@@ -648,26 +690,15 @@
         color: #5c6b73; 
         cursor: pointer; 
         border-right: 1px solid #eef0f2; 
-        transition: all 0.3s;
     }
-    .tab-btn:hover {
-        color: #152f47;
-        background: #f8fafc;
-    }
-    .tab-btn.active { 
-        background: #152f47; 
-        color: #fff; 
-        font-weight: 700;
-    }
+    .tab-btn.active { background: #152f47; color: #fff; font-weight: 700; }
 
     .tab-content { display: none; width: 100%; max-width: 1100px; margin: 0 auto; background: #fff; }
     .tab-content.active { display: block !important; }
 
-    /* [5. 탭 콘텐츠 & 복합 필터] */
     .view-mode-selector { 
         display: flex; 
         background: #f1f3f5; 
-        margin: 0; 
         padding: 12px; 
         position: sticky; 
         top: 55px; 
@@ -675,159 +706,43 @@
         border-bottom: 1px solid #e2e6ea; 
     }
     .mode-btn { 
-        flex: 1; 
-        padding: 12px; 
-        border: none; 
-        background: #e2e6ea; 
-        font-weight: 700; 
-        color: #5c6b73; 
-        cursor: pointer; 
-        border-radius: 8px; 
-        margin: 0 5px; 
-        transition: all 0.2s;
+        flex: 1; padding: 12px; border: none; background: #e2e6ea; 
+        font-weight: 700; color: #5c6b73; cursor: pointer; border-radius: 8px; margin: 0 5px; 
     }
-    .mode-btn.active { 
-        background: #152f47; 
-        color: #fff; 
-    }
+    .mode-btn.active { background: #152f47; color: #fff; }
     .mode-content, .sub-tab-content { display: none; }
     .mode-content.active, .sub-tab-content.active { display: block !important; }
-    
-    .size-filter, .type-group.active { 
-        position: sticky; 
-        top: 130px; 
-        z-index: 1000; 
-        background: #fff; 
-        border-bottom: 1px solid #eef0f2; 
-        transition: all 0.3s ease; 
-    }
-    .size-filter.scrolled, .type-group.active.scrolled { 
-        background: transparent !important; 
-        border-bottom: none !important; 
-    }
-    
-    .swipe-hint-text {
-        display: none;
-        font-size: 11px;
-        color: #b28970;
-        margin-top: 15px;
-        margin-bottom: -5px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-        text-align: center;
-    }
 
-    .size-filter { 
-        display: flex; 
-        justify-content: flex-start; 
-        gap: 8px; 
-        padding: 16px 12px 24px 12px; 
-        overflow-x: auto; 
-        scrollbar-width: thin; 
-        scrollbar-color: #b28970 #eef0f2; 
-    }
-
-    @media (max-width: 1023px) {
-        .swipe-hint-text {
-            display: block; 
-            animation: pulseSwipeHint 2s infinite ease-in-out;
-        }
-        .size-filter::-webkit-scrollbar { 
-            display: block !important;
-            height: 3px; 
-        }
-        .size-filter::-webkit-scrollbar-track {
-            background: #eef0f2; 
-            border-radius: 10px;
-        }
-        .size-filter::-webkit-scrollbar-thumb {
-            background: #b28970; 
-            border-radius: 10px;
-        }
-    }
+    .size-filter, .type-group.active { position: sticky; top: 130px; z-index: 1000; background: #fff; border-bottom: 1px solid #eef0f2; }
+    .swipe-hint-text { display: none; font-size: 11px; color: #b28970; margin-top: 15px; text-align: center; font-weight: 700; }
     
-    @keyframes pulseSwipeHint {
-        0%, 100% { opacity: 0.6; transform: scale(0.98); }
-        50% { opacity: 1; transform: scale(1); }
-    }
-
-    .filter-btn, .sub-tab-btn { 
-        flex: 0 0 auto; 
-        min-width: 95px; 
-        padding: 10px 18px; 
-        border: 1px solid #152f47; 
-        background: #fff; 
-        color: #152f47; 
-        border-radius: 30px; 
-        font-weight: 700; 
-        font-size: 13px;
-        cursor: pointer; 
-        transition: all 0.25s;
-    }
-    .filter-btn:hover, .sub-tab-btn:hover {
-        background: #fafafa;
-    }
-    .filter-btn.active, .sub-tab-btn.active { 
-        background: #152f47 !important; 
-        color: #fff !important; 
-        border-color: #152f47;
-        box-shadow: 0 4px 10px rgba(21, 47, 71, 0.2);
-    }
+    .size-filter { display: flex; gap: 8px; padding: 16px 12px 24px; overflow-x: auto; }
+    .filter-btn, .sub-tab-btn { flex: 0 0 auto; min-width: 95px; padding: 10px 18px; border: 1px solid #152f47; background: #fff; color: #152f47; border-radius: 30px; font-weight: 700; font-size: 13px; cursor: pointer; }
+    .filter-btn.active, .sub-tab-btn.active { background: #152f47 !important; color: #fff !important; }
     .type-group { display: none; padding: 18px 10px; text-align: center; }
     #num-view .type-group.active { display: block !important; }
     .sub-tab-menu { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
 
-    /* [6. PC 레이아웃 고정] */
+    /* PC 및 모바일 반응형 Breakpoints */
     @media (min-width: 1024px) {
-        .size-filter {
-            justify-content: center; 
-            padding: 16px 12px;
+        .size-filter { justify-content: center; }
+        .business-card { 
+            position: fixed; top: 55%; left: 40px; transform: translateY(-50%); 
+            width: 320px; z-index: 1100; border-radius: 24px; 
+            background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); 
         }
-        .size-filter::-webkit-scrollbar {
-            display: none !important; 
-        }
-        .business-card, .reservation-card { 
-            position: fixed; 
-            top: 55%; 
-            width: 320px; 
-            z-index: 1100; 
-            border: 1px solid rgba(178, 137, 112, 0.3); 
-            border-radius: 24px; 
-            background: rgba(255, 255, 255, 0.95); 
-            backdrop-filter: blur(10px); 
-            box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
-        }
-        .business-card { left: 40px; transform: translateY(-50%); }
-        .reservation-card { right: 40px; transform: translateY(-50%); }
-        .business-card.scrolled, .reservation-card.scrolled { top: 50% !important; }
-        
-        .main-title .inner-logo { 
-            display: block; 
-            position: absolute; 
-            left: 115px; 
-            top: 50%; 
-            transform: translateY(-50%); 
-            height: 120px; 
-            z-index: 1; 
-        }
-        .main-title .inner-logo img { height: 100%; width: auto; object-fit: contain; }
-        .main-title h2 { font-size: 40px; letter-spacing: -2px; }
-        .main-title p { font-size: 18px; margin-top: 15px; }
-        
-        .mobile-res-only { display: none; } 
+        .main-title .inner-logo { display: block; position: absolute; left: 115px; top: 50%; transform: translateY(-50%); height: 120px; }
+        .main-title .inner-logo img { height: 100%; width: auto; }
+        .mobile-res-only { display: none; }
     }
 
-    /* [7. 모바일 레이아웃] */
     @media (max-width: 1023px) {
-        .reservation-card { 
-            position: static; 
-            border: none; 
-            border-top: 8px solid #eef0f2; 
-            padding: 50px 20px; 
-            background: #fcfdfe; 
-        }
-        #resCard { display: none; } 
+        .swipe-hint-text { display: block; }
+        .reserve-form-card { grid-template-columns: 1fr; }
+        .reserve-left-info { border-right: none; border-bottom: 1px solid var(--top-border-light); padding: 25px 20px; }
+        .reserve-right-form { padding: 25px 20px; }
+        .form-row-2 { grid-template-columns: 1fr; }
+        #resCard { display: none; }
     }
 </style>
 </head>
