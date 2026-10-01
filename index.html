@@ -386,9 +386,10 @@
         /* [4. PC 고정 카드 및 반응형 제어] */
         @media (min-width: 1024px) {
             .size-filter { justify-content: center; }
+            
             .business-card, #pcResCard { 
                 position: fixed; 
-                top: 55%; 
+                top: 50%; /* 수직 중앙 정렬로 교정 */
                 width: 320px; 
                 z-index: 1100; 
                 border: 1px solid rgba(178, 137, 112, 0.3); 
@@ -396,30 +397,51 @@
                 background: rgba(255, 255, 255, 0.95); 
                 backdrop-filter: blur(10px); 
                 box-shadow: 0 30px 60px -15px rgba(21, 47, 71, 0.15); 
-                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); 
+                transition: all 0.3s ease; 
+                transform: translateY(-50%);
+                
+                /* 상단 짤림 방지 및 화면 맞춤 설정 */
+                max-height: calc(100vh - 40px);
+                overflow-y: auto;
             }
-            .business-card { left: 40px; transform: translateY(-50%); }
-            #pcResCard { right: 40px; transform: translateY(-50%); padding: 0; }
-            .business-card.scrolled, #pcResCard.scrolled { top: 50% !important; }
+            
+            .business-card { left: 30px; }
+            #pcResCard { right: 30px; padding: 0; }
+            
+            .business-card.scrolled, #pcResCard.scrolled { 
+                top: 50% !important; 
+            }
 
-            /* PC 고정 카드 전용 폼 스타일 */
+            /* 스크롤바 바 두께/색상 깔끔하게 맞춤 */
+            .business-card::-webkit-scrollbar,
+            #pcResCard::-webkit-scrollbar {
+                width: 4px;
+            }
+            .business-card::-webkit-scrollbar-thumb,
+            #pcResCard::-webkit-scrollbar-thumb {
+                background: var(--top-gold);
+                border-radius: 4px;
+            }
+
+            /* PC 카드 내부 여백 최적화 */
             #pcResCard .res-container {
-                padding: 28px 22px !important;
+                padding: 20px 18px !important;
                 background: #ffffff !important;
                 border-radius: 24px !important;
             }
             #pcResCard h3 {
                 color: #152f47 !important;
-                font-size: 18px !important;
-                margin-bottom: 16px !important;
+                font-size: 17px !important;
+                margin-top: 0 !important;
+                margin-bottom: 12px !important;
             }
             #pcResCard .res-input {
                 width: 100% !important;
-                padding: 12px 14px !important;
-                margin-bottom: 10px !important;
+                padding: 10px 12px !important;
+                margin-bottom: 8px !important;
                 border: 1.5px solid #cbd5e1 !important;
                 border-radius: 8px !important;
-                font-size: 14px !important;
+                font-size: 13.5px !important;
                 font-family: inherit !important;
                 color: #0f172a !important;
                 background: #f8fafc !important;
@@ -431,7 +453,7 @@
             }
             #pcResCard textarea.res-input {
                 resize: vertical;
-                min-height: 70px;
+                min-height: 60px;
             }
             #pcResCard .res-input:focus {
                 border-color: #b28970 !important;
@@ -440,7 +462,7 @@
             }
             #pcResCard .res-btn {
                 width: 100% !important;
-                padding: 14px !important;
+                padding: 12px !important;
                 background: linear-gradient(135deg, #152f47, #0f2233) !important;
                 color: #ffd54f !important;
                 border: 1.5px solid rgba(178, 137, 112, 0.35) !important;
