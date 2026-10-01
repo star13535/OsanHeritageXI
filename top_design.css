@@ -1783,3 +1783,14 @@ html {
     padding-bottom: 90px;
   }
 }
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .section-container,
+  .hero-container,
+  .nav-container {
+    max-width: 100%;
+  }
+}
