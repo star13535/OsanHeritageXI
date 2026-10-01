@@ -756,14 +756,30 @@
         </div>
     </div>
 
-    <div class="reservation-card" id="resCard">
+    <!-- <div class="reservation-card" id="resCard">
         <div class="res-container">
             <h3>📞 전화 상담 예약하기</h3>
             <input type="text" id="pcName" class="res-input" placeholder="이름">
             <input type="tel" id="pcPhone" class="res-input" placeholder="연락처 (-없이 숫자만 입력)">
             <button class="res-btn" onclick="sendReservation('pcName', 'pcPhone')">✉️ 상담 예약 신청</button>
         </div>
+    </div> -->
+    <div class="reservation-card" id="resCard">
+    <div class="reserve-form-card">
+        <div class="reserve-right-form" style="padding: 24px 18px;">
+            <h3 style="color: var(--top-navy); margin-bottom: 12px; font-size: 17px; text-align: center;">📞 전화 상담 예약하기</h3>
+            <div class="vip-modern-form">
+                <div class="form-field">
+                    <input type="text" id="pcName" placeholder="고객 성함">
+                </div>
+                <div class="form-field">
+                    <input type="tel" id="pcPhone" placeholder="연락처 (-없이 입력)">
+                </div>
+                <button class="btn-submit-vip" onclick="sendReservation('pcName', 'pcPhone')">상담 예약 신청</button>
+            </div>
+        </div>
     </div>
+</div>
     
     <!-- <div class="intro-popup-container" id="introPopup">
         <div class="intro-popup-content">
@@ -796,14 +812,41 @@
 
     <div id="tab1" class="tab-content active">
         <img src="img/102.jpg"><img src="img/1.jpg"><img src="img/2.jpg"><img src="img/3.jpg"><img src="img/4.jpg"><img src="img/5.jpg">
-        <div class="reservation-card mobile-res-only">
+        <!-- <div class="reservation-card mobile-res-only">
             <div class="res-container">
                 <h3>📞 전화 상담 예약하기</h3>
                 <input type="text" id="mName1" class="res-input" placeholder="이름">
                 <input type="tel" id="mPhone1" class="res-input" placeholder="연락처">
                 <button class="res-btn" onclick="sendReservation('mName1', 'mPhone1')">상담 예약 신청</button>
             </div>
+        </div> -->
+        <div class="reservation-card mobile-res-only">
+    <div class="reserve-form-card">
+        <div class="reserve-left-info">
+            <div class="official-card-showcase">
+                <span class="ocs-badge">공식 분양관</span>
+                <img src="img/JYH.JPG" alt="장영희 팀장" class="ocs-card-img">
+                <p style="font-size: 13px; margin: 0;">오산 헤리티지 자이 <br><strong>장영희 팀장 직통 상담</strong></p>
+            </div>
         </div>
+        <div class="reserve-right-form">
+            <div class="vip-modern-form">
+                <div class="form-row-2">
+                    <div class="form-field">
+                        <label>성함 <span class="req">*</span></label>
+                        <input type="text" id="mName1" placeholder="성함을 입력하세요">
+                    </div>
+                    <div class="form-field">
+                        <label>연락처 <span class="req">*</span></label>
+                        <input type="tel" id="mPhone1" placeholder="010-0000-0000">
+                    </div>
+                </div>
+                <button type="button" class="btn-submit-vip" onclick="sendReservation('mName1', 'mPhone1')">방문 예약 신청하기</button>
+                <p class="form-safe-guard">※ 개인정보는 예약 확인 목적으로만 사용됩니다.</p>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
 
     <div id="tab2" class="tab-content">
