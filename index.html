@@ -388,29 +388,28 @@
             .size-filter { justify-content: center; }
             
             .business-card, #pcResCard { 
-                position: fixed; 
-                top: 180px !important; /* 상단 배너 아래쪽부터 깔끔하게 시작 */
-                transform: none !important; /* 위로 밀어올리던 translateY 제거 */
+                position: absolute; 
+                top: 280px; /* 맨 위 상태에서는 탭 메뉴 아래쪽에 위치 */
                 width: 310px; 
-                z-index: 2500 !important; /* 탭 메뉴(z-index: 2000)보다 위에 배치 */
+                z-index: 2500 !important; 
                 border: 1px solid rgba(178, 137, 112, 0.3); 
                 border-radius: 24px; 
                 background: rgba(255, 255, 255, 0.98); 
                 backdrop-filter: blur(10px); 
                 box-shadow: 0 20px 50px -10px rgba(21, 47, 71, 0.18); 
-                transition: all 0.3s ease; 
+                transition: top 0.2s ease, position 0.2s ease; 
                 
-                /* 화면 세로가 짧을 때 위아래 짤림 방지 */
-                max-height: calc(100vh - 200px);
+                max-height: calc(100vh - 100px);
                 overflow-y: auto;
             }
             
             .business-card { left: 25px; }
             #pcResCard { right: 25px; padding: 0; }
             
-            /* 스크롤을 내려도 위치 유지를 위해 수직 이동 제거 */
+            /* 스크롤을 내렸을 때 적용되는 클래스 (화면 상단 고정) */
             .business-card.scrolled, #pcResCard.scrolled { 
-                top: 180px !important; 
+                position: fixed !important;
+                top: 70px !important; /* 스크롤 시 화면 상단 70px 위치에 고정 */
             }
 
             /* 카드 내부 스크롤바 디자인 */
@@ -907,7 +906,7 @@
                 const pcResCard = document.getElementById('pcResCard');
         
                 if (window.innerWidth >= 1024) {
-                    if (s > 100) {
+                    if (s > 200) {
                         pcCard?.classList.add('scrolled');
                         pcResCard?.classList.add('scrolled');
                     } else {
@@ -950,9 +949,9 @@
             let extraText = "";
             if (dateVal) extraText += `\n- 방문 희망일: ${dateVal}`;
             if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
-            if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
+            if (memoVal) extraText += `\n- 문의 사항: ${memoVal}`;
 
-            const message = `안녕하세요. ${name}입니다.\n${formattedPhone}로 오산 헤리티지자이 방문/상담 예약 신청합니다.${extraText}`;
+            const message = `<오산 헤리티지자이 방문/상담 예약>\n ${name}\n${formattedPhone} ${extraText}`;
             
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
