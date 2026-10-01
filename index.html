@@ -911,16 +911,12 @@
             }
         
             let extraText = "";
-            if (dateVal) {
-                extraText += `\n- 방문 희망일: ${dateVal}`;
-                if (timeVal) extraText += ` ${timeVal}`;
-            } else if (timeVal) {
-                extraText += `\n- 방문 희망시간: ${timeVal}`;
-            }
-            if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
-            if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
+            if (dateVal) extraText += `\n- 방문 희망일: ${dateVal}`;
+            if (timeVal) extraText += `\n- 방문 희망시간: ${timeVal}`;
+            // if (typeVal) extraText += `\n- 관심 평형: ${typeVal}`;
+            // if (memoVal) extraText += `\n- 요청사항: ${memoVal}`;
 
-            const message = `<오산 헤리티지 자이 방문/상담 신청>\n${name}\n${formattedPhone}\n${extraText}`;
+            const message = `<오산 헤리티지 자이 방문/상담 신청>\n${name}\n${formattedPhone}${extraText}`;
             
             const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
             const isAndroid = /Android/i.test(navigator.userAgent);
